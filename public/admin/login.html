@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — El Partners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+  <style>
+    /* ── Login page overrides ── */
+    body {
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 24px;
+      background-image:
+        radial-gradient(ellipse 50% 50% at 30% 20%, rgba(201,168,76,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 80% 80%, rgba(201,168,76,0.03) 0%, transparent 60%);
+    }
+
+    .login-page {
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+    }
+
+    /* decorative lines */
+    .login-page::before,
+    .login-page::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+    }
+    .login-page::before {
+      top: -20px; left: -20px;
+      width: 80px; height: 80px;
+      border: 1px solid rgba(201,168,76,0.15);
+      animation: floatDeco 6s ease-in-out infinite;
+    }
+    .login-page::after {
+      bottom: -20px; right: -20px;
+      width: 60px; height: 60px;
+      border: 1px solid rgba(201,168,76,0.1);
+      animation: floatDeco 6s ease-in-out infinite reverse;
+    }
+    @keyframes floatDeco {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(8px, -8px); }
+    }
+
+    .login-card {
+      background: linear-gradient(145deg, var(--navy-mid) 0%, #0e1e30 100%);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 16px;
+      padding: 48px 40px 40px;
+      position: relative;
+      z-index: 1;
+      box-shadow:
+        0 24px 64px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(201,168,76,0.06);
+    }
+
+    .login-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+
+    .login-logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+
+    .login-logo {
+      width: 64px;
+      height: 64px;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 1px;
+      position: relative;
+    }
+    .login-logo::before {
+      content: '';
+      position: absolute;
+      top: 4px; left: 4px; right: 4px; bottom: 4px;
+      border: 0.5px solid rgba(201,168,76,0.25);
+    }
+
+    .login-title {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--cream);
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 16px;
+      margin-bottom: 4px;
+    }
+
+    .login-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin: 12px auto 16px;
+    }
+
+    .login-sub {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+      font-weight: 400;
+      margin-bottom: 32px;
+    }
+
+    .login-card .form-group {
+      margin-bottom: 22px;
+    }
+
+    .login-card .form-label {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      margin-bottom: 10px;
+    }
+
+    .login-card .form-control {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--cream);
+      transition: all var(--transition);
+    }
+
+    .login-card .form-control:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
+    }
+
+    .login-card .form-control::placeholder {
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
+    .login-card .input-wrap {
+      position: relative;
+    }
+
+    .login-card .input-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .login-card .input-icon + .form-control {
+      padding-left: 44px;
+    }
+
+    .login-btn {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin-top: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-btn:hover:not(:disabled) {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.25);
+    }
+
+    .login-btn:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .login-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .login-btn .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(11,24,41,0.2);
+      border-top-color: var(--navy);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .login-error {
+      background: rgba(231,76,60,0.1);
+      border: 1px solid rgba(231,76,60,0.2);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #ff6b6b;
+      font-size: 12px;
+      margin-bottom: 16px;
+      display: none;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .login-error.show { display: block; }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(201,168,76,0.06);
+    }
+
+    .login-footer a {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: color var(--transition);
+    }
+
+    .login-footer a:hover {
+      color: var(--gold);
+    }
+
+    /* responsive */
+    @media (max-width: 480px) {
+      body { padding: 16px; }
+      .login-card { padding: 36px 24px 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-card">
+      <div class="login-logo-wrap">
+        <div class="login-logo">EL</div>
+      </div>
+      <h1 class="login-title">El Partners</h1>
+      <div class="login-divider"></div>
+      <p class="login-sub">Admin Panel</p>
+
+      <div id="loginError" class="login-error"></div>
+
+      <form id="loginForm" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label" for="username">Username</label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>
+            </span>
+            <input type="text" id="username" class="form-control" placeholder="admin" required autocomplete="username">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <input type="password" id="password" class="form-control" placeholder="••••••" required autocomplete="current-password">
+          </div>
+        </div>
+        <button type="submit" class="login-btn" id="loginBtn">Masuk</button>
+      </form>
+
+      <div class="login-footer">
+        <a href="/">&larr; Kembali ke Website</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const errorEl = document.getElementById('loginError');
+    const btn = document.getElementById('loginBtn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.remove('show');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Memproses...';
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: document.getElementById('username').value,
+            password: document.getElementById('password').value
+          })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.error || 'Login gagal');
+        }
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        window.location.href = '/admin/dashboard';
+      } catch (err) {
+        errorEl.textContent = err.message;
+        errorEl.classList.add('show');
+        btn.disabled = false;
+        btn.textContent = 'Masuk';
+      }
+    });
+  </script>
+</body>
+</html>

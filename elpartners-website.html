@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Partners — Legal & Corporate Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1829;
+    --navy-mid: #122033;
+    --navy-light: #1A2F47;
+    --navy-soft: #243D57;
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5E6C0;
+    --cream: #FAF7F0;
+    --cream-warm: #F2EDE0;
+    --white: #FFFFFF;
+    --text-muted: #8FA3B8;
+    --text-light: #B8CAD9;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--navy);
+    color: var(--cream);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 72px;
+    background: rgba(11, 24, 41, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    transition: var(--transition);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none;
+  }
+  .nav-logo-mark {
+    width: 44px; height: 44px;
+    border: 1.5px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 20px; font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 1px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .nav-logo-mark::before {
+    content: '';
+    position: absolute; top: 3px; left: 3px; right: 3px; bottom: 3px;
+    border: 0.5px solid rgba(201, 168, 76, 0.3);
+  }
+  .nav-logo-text { display: flex; flex-direction: column; }
+  .nav-logo-name {
+    font-family: var(--serif);
+    font-size: 18px; font-weight: 600;
+    color: var(--cream);
+    letter-spacing: 2px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .nav-logo-sub {
+    font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-top: 3px;
+  }
+
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; font-size: 11px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-light);
+    transition: color var(--transition);
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transition: transform var(--transition);
+    transform-origin: left;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 8px 22px !important;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--sans);
+    transition: all var(--transition);
+    display: inline-block;
+  }
+  .nav-cta:hover {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+  }
+  .nav-cta::after { display: none !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 5vw 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 40%, rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 80% at 90% 80%, rgba(201, 168, 76, 0.04) 0%, transparent 70%),
+      var(--navy);
+  }
+
+  .hero-grid-lines {
+    position: absolute; inset: 0; z-index: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.8) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.8) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 640px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    padding: 7px 18px;
+    margin-bottom: 36px;
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+  }
+  .hero-badge-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  .hero-eyebrow {
+    font-family: var(--serif);
+    font-size: clamp(13px, 1.2vw, 15px);
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(44px, 6vw, 80px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--cream);
+    margin-bottom: 24px;
+    opacity: 0; animation: fadeUp 0.8s 0.35s forwards;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-title strong { font-weight: 700; display: block; }
+
+  .hero-desc {
+    font-size: 15px; line-height: 1.8; font-weight: 300;
+    color: var(--text-light);
+    max-width: 480px; margin-bottom: 44px;
+    opacity: 0; animation: fadeUp 0.8s 0.5s forwards;
+  }
+
+  .hero-tags {
+    display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 44px;
+    opacity: 0; animation: fadeUp 0.8s 0.65s forwards;
+  }
+  .hero-tag {
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+    color: var(--navy); background: var(--gold);
+    padding: 6px 14px;
+  }
+
+  .hero-actions {
+    display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    border: none; cursor: pointer;
+    font-family: var(--sans);
+    font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    padding: 16px 36px;
+    text-decoration: none; display: inline-block;
+    transition: all var(--transition);
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::before {
+    content: ''; position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: rgba(255,255,255,0.15);
+    transition: left 0.4s ease;
+  }
+  .btn-primary:hover::before { left: 0; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold);
+    background: transparent; cursor: pointer;
+    font-family: var(--sans);
+    font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+    padding: 16px 32px;
+    text-decoration: none; display: inline-block;
+    transition: all var(--transition);
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  /* hero floating card */
+  .hero-card {
+    position: absolute; right: 5vw; top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 28px;
+    opacity: 0; animation: fadeLeft 0.9s 0.9s forwards;
+  }
+  .hero-card-title {
+    font-family: var(--serif); font-size: 11px; font-style: italic;
+    color: var(--gold); letter-spacing: 1px; margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero-stat { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(201,168,76,0.1); }
+  .hero-stat:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .hero-stat-num {
+    font-family: var(--serif); font-size: 36px; font-weight: 600;
+    color: var(--gold-light); line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 4px;
+  }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeLeft { from { opacity: 0; transform: translate(24px, -50%); } to { opacity: 1; transform: translate(0, -50%); } }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 5vw; }
+
+  .section-eyebrow {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 16px;
+  }
+  .section-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 3.5vw, 52px);
+    font-weight: 300; line-height: 1.1;
+    color: var(--cream); margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--gold-light); }
+  .section-desc {
+    font-size: 15px; font-weight: 300; line-height: 1.8;
+    color: var(--text-light); max-width: 520px;
+  }
+
+  /* ── WHY US ── */
+  #mengapa { background: var(--navy-mid); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  .why-left { }
+  .why-features { list-style: none; margin-top: 40px; }
+  .why-feature {
+    display: flex; gap: 20px; padding: 24px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    cursor: default;
+    transition: padding-left var(--transition);
+  }
+  .why-feature:hover { padding-left: 8px; }
+  .why-feature:first-child { border-top: 1px solid rgba(201,168,76,0.1); }
+  .why-feature-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1px solid rgba(201,168,76,0.25);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-family: var(--serif);
+    font-size: 18px; font-weight: 600;
+    transition: all var(--transition);
+  }
+  .why-feature:hover .why-feature-icon {
+    background: var(--gold); color: var(--navy);
+  }
+  .why-feature-body {}
+  .why-feature-title {
+    font-size: 13px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--cream); margin-bottom: 6px;
+  }
+  .why-feature-desc { font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--text-light); }
+
+  .why-right {
+    position: sticky; top: 100px;
+  }
+  .why-visual {
+    background: var(--navy-light);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-visual::before {
+    content: '"';
+    position: absolute; top: -10px; left: 24px;
+    font-family: var(--serif); font-size: 120px;
+    color: rgba(201,168,76,0.08); line-height: 1;
+    pointer-events: none;
+  }
+  .why-quote {
+    font-family: var(--serif); font-size: 22px; font-style: italic;
+    font-weight: 300; line-height: 1.6; color: var(--cream-warm);
+    margin-bottom: 24px;
+  }
+  .why-quote-author {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+  }
+  .why-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: rgba(201,168,76,0.1);
+    margin-top: 32px;
+  }
+  .why-stat {
+    background: var(--navy-mid);
+    padding: 24px;
+  }
+  .why-stat-num {
+    font-family: var(--serif); font-size: 40px; font-weight: 700;
+    color: var(--gold); line-height: 1;
+  }
+  .why-stat-label {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 6px;
+  }
+
+  /* ── LAYANAN ── */
+  #layanan { background: var(--navy); }
+
+  .layanan-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 56px; gap: 24px; flex-wrap: wrap;
+  }
+
+  .layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.1);
+  }
+
+  .layanan-card {
+    background: var(--navy);
+    padding: 36px 32px;
+    position: relative; overflow: hidden;
+    cursor: default;
+    transition: background var(--transition);
+  }
+  .layanan-card::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .layanan-card:hover { background: var(--navy-mid); }
+  .layanan-card:hover::after { transform: scaleX(1); }
+
+  .layanan-card-num {
+    font-family: var(--serif); font-size: 11px; font-style: italic;
+    color: rgba(201,168,76,0.4); letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .layanan-card-icon {
+    width: 48px; height: 48px;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    transition: all var(--transition);
+  }
+  .layanan-card:hover .layanan-card-icon {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+  .layanan-card-icon svg { width: 22px; height: 22px; color: var(--gold); }
+
+  .layanan-card-title {
+    font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--cream);
+    margin-bottom: 10px; line-height: 1.4;
+  }
+  .layanan-card-desc {
+    font-size: 12px; font-weight: 300; line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  /* featured layanan */
+  .layanan-card.featured {
+    background: var(--navy-light);
+    border: 1px solid rgba(201,168,76,0.3);
+    grid-column: span 1;
+  }
+  .layanan-card.featured::before {
+    content: 'Terbaru'; position: absolute; top: 16px; right: 16px;
+    font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 600; color: var(--navy);
+    background: var(--gold); padding: 4px 10px;
+  }
+
+  /* ── SPESIAL BANNER ── */
+  .spesial-banner {
+    margin: 60px 0 0;
+    background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-soft) 100%);
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 48px 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px; flex-wrap: wrap;
+    position: relative; overflow: hidden;
+  }
+  .spesial-banner::before {
+    content: '';
+    position: absolute; right: -60px; top: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%; border: 40px solid rgba(201,168,76,0.05);
+    pointer-events: none;
+  }
+  .spesial-tag {
+    display: inline-block;
+    font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
+    font-weight: 600; color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.4); padding: 5px 12px;
+    margin-bottom: 14px;
+  }
+  .spesial-title {
+    font-family: var(--serif); font-size: 26px; font-weight: 300;
+    line-height: 1.3; color: var(--cream);
+  }
+  .spesial-title em { font-style: italic; color: var(--gold-light); }
+  .spesial-desc {
+    font-size: 13px; font-weight: 300; line-height: 1.7;
+    color: var(--text-light); margin-top: 10px; max-width: 480px;
+  }
+  .spesial-actions { display: flex; gap: 12px; align-items: center; flex-shrink: 0; }
+
+  /* ── KEUNGGULAN ── */
+  #keunggulan { background: var(--navy-mid); }
+  .keunggulan-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: rgba(201,168,76,0.08);
+    margin-top: 56px;
+  }
+  .keunggulan-card {
+    background: var(--navy-mid); padding: 40px 28px;
+    text-align: center;
+    transition: background var(--transition);
+    cursor: default;
+  }
+  .keunggulan-card:hover { background: var(--navy-light); }
+  .keunggulan-icon {
+    width: 60px; height: 60px; margin: 0 auto 20px;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+    transition: all var(--transition);
+  }
+  .keunggulan-card:hover .keunggulan-icon {
+    background: rgba(201,168,76,0.08); border-color: var(--gold);
+  }
+  .keunggulan-icon svg { width: 26px; height: 26px; color: var(--gold); }
+  .keunggulan-title {
+    font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--cream); margin-bottom: 12px;
+  }
+  .keunggulan-desc {
+    font-size: 12px; font-weight: 300; line-height: 1.7; color: var(--text-muted);
+  }
+
+  /* ── KONTAK ── */
+  #kontak { background: var(--navy); }
+  .kontak-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    margin-top: 60px;
+  }
+  .kontak-info { }
+  .kontak-item {
+    display: flex; align-items: flex-start; gap: 18px;
+    margin-bottom: 28px; padding-bottom: 28px;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+  .kontak-item:last-child { border-bottom: none; }
+  .kontak-item-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .kontak-item-icon svg { width: 18px; height: 18px; color: var(--gold); }
+  .kontak-item-label {
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 4px;
+  }
+  .kontak-item-value {
+    font-size: 15px; font-weight: 400; color: var(--cream);
+  }
+  .kontak-item-value a { color: var(--cream); text-decoration: none; }
+  .kontak-item-value a:hover { color: var(--gold); }
+
+  .kontak-form {
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.12);
+    padding: 44px 40px;
+  }
+  .form-title {
+    font-family: var(--serif); font-size: 24px; font-style: italic;
+    color: var(--cream); margin-bottom: 32px;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-label {
+    display: block; font-size: 9px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .form-control {
+    width: 100%; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.12);
+    color: var(--cream);
+    font-family: var(--sans); font-size: 13px; font-weight: 300;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color var(--transition);
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-control:focus { border-color: rgba(201,168,76,0.5); }
+  .form-control::placeholder { color: var(--text-muted); }
+  textarea.form-control { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit {
+    width: 100%; margin-top: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding: 60px 5vw 32px;
+  }
+  .footer-inner {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+    margin-bottom: 32px;
+  }
+  .footer-brand-name {
+    font-family: var(--serif); font-size: 22px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .footer-brand-sub {
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 18px;
+  }
+  .footer-brand-desc {
+    font-size: 13px; font-weight: 300; line-height: 1.7;
+    color: var(--text-muted); max-width: 300px;
+  }
+  .footer-col-title {
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 20px;
+  }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a {
+    font-size: 13px; font-weight: 300; color: var(--text-muted);
+    text-decoration: none; transition: color var(--transition);
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .footer-tagline {
+    font-family: var(--serif); font-size: 15px; font-style: italic;
+    color: var(--gold-light);
+  }
+  .footer-copy {
+    font-size: 11px; color: var(--text-muted); font-weight: 300; letter-spacing: 0.5px;
+  }
+
+  /* ── DIVIDER ── */
+  .gold-divider {
+    width: 60px; height: 1px; background: var(--gold); margin: 20px 0;
+  }
+  .gold-divider.center { margin-left: auto; margin-right: auto; }
+
+  /* ── FLOATING WA ── */
+  .wa-float {
+    position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    width: 56px; height: 56px;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; text-decoration: none;
+    transition: all var(--transition);
+    box-shadow: 0 4px 24px rgba(201,168,76,0.35);
+  }
+  .wa-float:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(201,168,76,0.4); }
+  .wa-float svg { width: 26px; height: 26px; color: var(--navy); }
+
+  /* ── PORTFOLIO / KLIEN ── */
+  #portfolio { background: var(--navy); }
+
+  .portfolio-tabs {
+    display: flex; gap: 0; margin: 48px 0 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .portfolio-tab {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+    color: var(--text-muted); padding: 12px 24px; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: all var(--transition); background: none; border-top: none; border-left: none; border-right: none;
+    font-family: var(--sans);
+  }
+  .portfolio-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+  .portfolio-tab:hover:not(.active) { color: var(--cream); }
+
+  .portfolio-panel { display: none; }
+  .portfolio-panel.active { display: block; }
+
+  /* Ticker / auto-scroll logo strip */
+  .clients-ticker-wrap {
+    overflow: hidden; position: relative;
+    margin-bottom: 60px;
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+  .clients-ticker {
+    display: flex; gap: 0;
+    animation: ticker 28s linear infinite;
+    width: max-content;
+  }
+  .clients-ticker:hover { animation-play-state: paused; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .client-logo-card {
+    display: flex; align-items: center; justify-content: center;
+    width: 180px; height: 80px; flex-shrink: 0;
+    border-right: 1px solid rgba(201,168,76,0.08);
+    padding: 0 28px;
+    transition: background var(--transition);
+    cursor: default;
+  }
+  .client-logo-card:hover { background: rgba(201,168,76,0.04); }
+  .client-logo-inner {
+    text-align: center;
+  }
+  .client-logo-name {
+    font-family: var(--serif); font-size: 14px; font-weight: 600;
+    letter-spacing: 1px; color: rgba(201,168,76,0.45);
+    transition: color var(--transition);
+    white-space: nowrap;
+  }
+  .client-logo-card:hover .client-logo-name { color: var(--gold); }
+  .client-logo-type {
+    font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(201,168,76,0.2); margin-top: 3px;
+    transition: color var(--transition);
+  }
+  .client-logo-card:hover .client-logo-type { color: rgba(201,168,76,0.5); }
+
+  /* Portfolio cases grid */
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(201,168,76,0.08);
+    margin-bottom: 40px;
+  }
+  .portfolio-case {
+    background: var(--navy); padding: 32px 28px;
+    position: relative; overflow: hidden;
+    cursor: default; transition: background var(--transition);
+  }
+  .portfolio-case:hover { background: var(--navy-mid); }
+  .portfolio-case-tag {
+    display: inline-block;
+    font-size: 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+    color: var(--gold); border: 1px solid rgba(201,168,76,0.3);
+    padding: 4px 10px; margin-bottom: 16px;
+  }
+  .portfolio-case-company {
+    font-family: var(--serif); font-size: 20px; font-weight: 600;
+    color: var(--cream); margin-bottom: 6px; line-height: 1.2;
+  }
+  .portfolio-case-industry {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 14px;
+  }
+  .portfolio-case-services {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;
+  }
+  .portfolio-service-pill {
+    font-size: 9px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500;
+    color: var(--navy); background: rgba(201,168,76,0.7);
+    padding: 3px 9px;
+  }
+  .portfolio-case-desc {
+    font-size: 12px; font-weight: 300; line-height: 1.7; color: var(--text-muted);
+  }
+  .portfolio-case-check {
+    position: absolute; top: 20px; right: 20px;
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .portfolio-case-check svg { width: 12px; height: 12px; color: var(--gold); }
+
+  /* Testimonial strip */
+  .testimonial-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(201,168,76,0.08);
+  }
+  .testimonial-card {
+    background: var(--navy); padding: 36px 28px;
+    transition: background var(--transition);
+  }
+  .testimonial-card:hover { background: var(--navy-mid); }
+  .testimonial-stars {
+    display: flex; gap: 3px; margin-bottom: 16px;
+  }
+  .testimonial-stars span { color: var(--gold); font-size: 13px; }
+  .testimonial-text {
+    font-family: var(--serif); font-size: 15px; font-style: italic;
+    font-weight: 300; line-height: 1.7; color: var(--cream-warm);
+    margin-bottom: 20px;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .testimonial-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 14px; font-weight: 600;
+    color: var(--gold); flex-shrink: 0;
+    background: rgba(201,168,76,0.06);
+  }
+  .testimonial-name {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px; color: var(--cream);
+  }
+  .testimonial-role {
+    font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 2px;
+  }
+
+  /* counter strip */
+  .portfolio-counter-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.12);
+    margin-bottom: 48px;
+  }
+  .portfolio-counter {
+    padding: 32px 28px; text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.08);
+  }
+  .portfolio-counter:last-child { border-right: none; }
+  .portfolio-counter-num {
+    font-family: var(--serif); font-size: 44px; font-weight: 700;
+    color: var(--gold); line-height: 1;
+  }
+  .portfolio-counter-label {
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero-card { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-right { position: static; }
+    .layanan-grid { grid-template-columns: 1fr 1fr; }
+    .keunggulan-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr 1fr; }
+    .portfolio-counter-strip { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 5vw; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 5vw 60px; }
+    section { padding: 70px 5vw; }
+    .layanan-grid { grid-template-columns: 1fr; }
+    .kontak-inner { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .keunggulan-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+    .spesial-banner { padding: 32px 28px; }
+    .kontak-form { padding: 32px 24px; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .portfolio-counter-strip { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">EL</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">El Partners</span>
+      <span class="nav-logo-sub">Legal &amp; Corporate</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#mengapa">Mengapa Kami</a></li>
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#keunggulan">Keunggulan</a></li>
+    <li><a href="#portfolio">Klien</a></li>
+    <li><a href="#kontak" class="nav-cta">Konsultasi Gratis</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Konsultasi Awal Gratis
+    </div>
+    <p class="hero-eyebrow">Solusi Legalitas Usaha Terpercaya</p>
+    <h1 class="hero-title">
+      Legalitas <em>Usaha</em>
+      <strong>&amp; Corporate<br>Services</strong>
+    </h1>
+    <p class="hero-desc">
+      Solusi lengkap legalitas usaha untuk UMKM, Startup, dan Perusahaan. 
+      Proses transparan, dokumen resmi &amp; sah, didampingi hingga selesai.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">Cepat</span>
+      <span class="hero-tag">Aman</span>
+      <span class="hero-tag">Profesional</span>
+      <span class="hero-tag">Terpercaya</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#kontak" class="btn-primary">Mulai Konsultasi</a>
+      <a href="#layanan" class="btn-outline">Lihat Layanan</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-card-title">Rekam Jejak Kami</div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">500+</div>
+      <div class="hero-stat-label">Klien Dilayani</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">98%</div>
+      <div class="hero-stat-label">Kepuasan Klien</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">10+</div>
+      <div class="hero-stat-label">Tahun Pengalaman</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENGAPA KAMI -->
+<section id="mengapa">
+  <div class="why-grid">
+    <div class="why-left">
+      <div class="section-eyebrow reveal">Mengapa Memilih Kami</div>
+      <h2 class="section-title reveal reveal-delay-1">
+        Partner Legal yang <em>Tepat</em> untuk Bisnis Anda
+      </h2>
+      <p class="section-desc reveal reveal-delay-2">
+        Kami memahami bahwa legalitas adalah fondasi bisnis yang kokoh. 
+        Setiap langkah dikerjakan secara profesional dengan standar tertinggi.
+      </p>
+      <ul class="why-features">
+        <li class="why-feature reveal reveal-delay-1">
+          <div class="why-feature-icon">I</div>
+          <div class="why-feature-body">
+            <div class="why-feature-title">Konsultasi Awal Gratis</div>
+            <div class="why-feature-desc">Konsultasi kebutuhan usaha Anda tanpa biaya. Kami analisis dan rekomendasikan solusi terbaik.</div>
+          </div>
+        </li>
+        <li class="why-feature reveal reveal-delay-2">
+          <div class="why-feature-icon">II</div>
+          <div class="why-feature-body">
+            <div class="why-feature-title">Proses Transparan</div>
+            <div class="why-feature-desc">Setiap tahap dikerjakan secara jelas dan dapat dipantau. Tidak ada biaya tersembunyi.</div>
+          </div>
+        </li>
+        <li class="why-feature reveal reveal-delay-3">
+          <div class="why-feature-icon">III</div>
+          <div class="why-feature-body">
+            <div class="why-feature-title">Pendampingan Sampai Selesai</div>
+            <div class="why-feature-desc">Kami dampingi hingga dokumen selesai dan terbit. Tim berpengalaman siap membantu setiap saat.</div>
+          </div>
+        </li>
+        <li class="why-feature reveal reveal-delay-4">
+          <div class="why-feature-icon">IV</div>
+          <div class="why-feature-body">
+            <div class="why-feature-title">Dokumen Lengkap &amp; Sesuai Regulasi</div>
+            <div class="why-feature-desc">Dokumen resmi, sah, dan sesuai dengan ketentuan peraturan perundang-undangan yang berlaku.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-right reveal">
+      <div class="why-visual">
+        <p class="why-quote">
+          "Menangani berbagai kebutuhan legalitas usaha sesuai ketentuan peraturan perundang-undangan yang berlaku — dengan integritas dan profesionalisme penuh."
+        </p>
+        <div class="why-quote-author">— El Partners, Jakarta</div>
+        <div class="why-stats">
+          <div class="why-stat">
+            <div class="why-stat-num">500+</div>
+            <div class="why-stat-label">Klien</div>
+          </div>
+          <div class="why-stat">
+            <div class="why-stat-num">100%</div>
+            <div class="why-stat-label">Legal &amp; Sah</div>
+          </div>
+          <div class="why-stat">
+            <div class="why-stat-num">9</div>
+            <div class="why-stat-label">Jenis Layanan</div>
+          </div>
+          <div class="why-stat">
+            <div class="why-stat-num">24/7</div>
+            <div class="why-stat-label">Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAYANAN -->
+<section id="layanan">
+  <div class="layanan-header">
+    <div>
+      <div class="section-eyebrow reveal">Layanan Kami</div>
+      <h2 class="section-title reveal reveal-delay-1">Solusi <em>Lengkap</em> Legalitas Bisnis</h2>
+    </div>
+    <a href="#kontak" class="btn-outline reveal reveal-delay-2">Tanya Layanan</a>
+  </div>
+
+  <div class="layanan-grid">
+    <div class="layanan-card reveal">
+      <div class="layanan-card-num">01</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0H5m14 0h2M5 21H3M9 7h1m-1 4h1m4-4h1m-1 4h1M9 15h6"/></svg>
+      </div>
+      <div class="layanan-card-title">Pendirian PT</div>
+      <div class="layanan-card-desc">Pendirian Perseroan Terbatas lengkap sesuai ketentuan hukum yang berlaku.</div>
+    </div>
+    <div class="layanan-card reveal reveal-delay-1">
+      <div class="layanan-card-num">02</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="layanan-card-title">PT Perorangan</div>
+      <div class="layanan-card-desc">Pendirian PT Perorangan untuk pelaku usaha mikro dan kecil secara simpel.</div>
+    </div>
+    <div class="layanan-card reveal reveal-delay-2">
+      <div class="layanan-card-num">03</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/></svg>
+      </div>
+      <div class="layanan-card-title">NIB &amp; OSS RBA</div>
+      <div class="layanan-card-desc">Pendaftaran Nomor Induk Berusaha melalui sistem OSS RBA dengan cepat.</div>
+    </div>
+    <div class="layanan-card reveal">
+      <div class="layanan-card-num">04</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-5m-1.414-9.414a2 2 0 1 1 2.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+      </div>
+      <div class="layanan-card-title">Perubahan Akta PT</div>
+      <div class="layanan-card-desc">Perubahan anggaran dasar dan akta perusahaan sesuai kebutuhan bisnis.</div>
+    </div>
+    <div class="layanan-card reveal reveal-delay-1">
+      <div class="layanan-card-num">05</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0"/></svg>
+      </div>
+      <div class="layanan-card-title">Perubahan Direksi &amp; Komisaris</div>
+      <div class="layanan-card-desc">Pembaruan susunan pengurus perusahaan dengan dokumen lengkap dan legal.</div>
+    </div>
+    <div class="layanan-card reveal reveal-delay-2">
+      <div class="layanan-card-num">06</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/></svg>
+      </div>
+      <div class="layanan-card-title">Perubahan Maksud &amp; Tujuan (KBLI)</div>
+      <div class="layanan-card-desc">Penyesuaian bidang usaha sesuai KBLI terkini untuk mendukung ekspansi bisnis.</div>
+    </div>
+    <div class="layanan-card reveal">
+      <div class="layanan-card-num">07</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div class="layanan-card-title">Laporan Tahunan Perseroan (AHU)</div>
+      <div class="layanan-card-desc">Penyampaian laporan tahunan PT ke AHU sesuai Permenkum No. 49 Tahun 2025.</div>
+    </div>
+    <div class="layanan-card reveal reveal-delay-1">
+      <div class="layanan-card-num">08</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="layanan-card-title">Pendaftaran Merek</div>
+      <div class="layanan-card-desc">Perlindungan merek dagang Anda melalui pendaftaran resmi di DJKI Kemenkumham.</div>
+    </div>
+    <div class="layanan-card reveal reveal-delay-2">
+      <div class="layanan-card-num">09</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <div class="layanan-card-title">Perjanjian Kerja Sama &amp; Kontrak Bisnis</div>
+      <div class="layanan-card-desc">Penyusunan perjanjian dan kontrak bisnis yang kuat dan sesuai regulasi hukum.</div>
+    </div>
+  </div>
+
+  <!-- Spesial Banner -->
+  <div class="spesial-banner reveal">
+    <div>
+      <span class="spesial-tag">Spesial — Layanan Terbaru</span>
+      <h3 class="spesial-title">
+        Laporan Tahunan PT ke <em>AHU/SABH</em><br>
+        Permenkum No. 49 Tahun 2025
+      </h3>
+      <p class="spesial-desc">
+        Hindari sanksi administrasi — patuhi kewajiban pelaporan tepat waktu. 
+        Kami bantu proses penyampaian laporan tahunan dengan cepat dan tepat.
+      </p>
+    </div>
+    <div class="spesial-actions">
+      <a href="#kontak" class="btn-primary">Urus Sekarang</a>
+    </div>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section id="keunggulan">
+  <div style="text-align: center; max-width: 540px; margin: 0 auto;">
+    <div class="section-eyebrow reveal" style="justify-content: center;">Keunggulan Layanan</div>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align: center;">Kenapa <em>El Partners</em>?</h2>
+  </div>
+  <div class="keunggulan-grid">
+    <div class="keunggulan-card reveal">
+      <div class="keunggulan-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <div class="keunggulan-title">Legalitas Lengkap</div>
+      <div class="keunggulan-desc">Dokumen resmi, sah, dan sesuai peraturan yang berlaku. Dijamin keabsahannya.</div>
+    </div>
+    <div class="keunggulan-card reveal reveal-delay-1">
+      <div class="keunggulan-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="keunggulan-title">Hemat Waktu</div>
+      <div class="keunggulan-desc">Proses cepat dan efisien, tanpa mengganggu aktivitas bisnis Anda yang berjalan.</div>
+    </div>
+    <div class="keunggulan-card reveal reveal-delay-2">
+      <div class="keunggulan-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div class="keunggulan-title">Kerahasiaan Terjamin</div>
+      <div class="keunggulan-desc">Data dan informasi klien kami jaga kerahasiaannya dengan standar keamanan tinggi.</div>
+    </div>
+    <div class="keunggulan-card reveal reveal-delay-3">
+      <div class="keunggulan-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0"/></svg>
+      </div>
+      <div class="keunggulan-title">Pendampingan Penuh</div>
+      <div class="keunggulan-desc">Kami dampingi Anda sampai dokumen selesai dan terbit. Tim profesional siap membantu.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO & KLIEN -->
+<section id="portfolio">
+  <div class="section-eyebrow reveal">Portfolio &amp; Klien</div>
+  <h2 class="section-title reveal reveal-delay-1">
+    Dipercaya oleh <em>Ratusan</em> Bisnis
+  </h2>
+  <p class="section-desc reveal reveal-delay-2">
+    Dari UMKM hingga perusahaan besar — kami telah membantu berbagai klien menyelesaikan kebutuhan legalitas usaha mereka.
+  </p>
+
+  <!-- Counter Strip -->
+  <div class="portfolio-counter-strip reveal">
+    <div class="portfolio-counter">
+      <div class="portfolio-counter-num" data-target="500">0</div>
+      <div class="portfolio-counter-label">Total Klien Dilayani</div>
+    </div>
+    <div class="portfolio-counter">
+      <div class="portfolio-counter-num" data-target="320">0</div>
+      <div class="portfolio-counter-label">PT Berhasil Didirikan</div>
+    </div>
+    <div class="portfolio-counter">
+      <div class="portfolio-counter-num" data-target="98">0</div>
+      <div class="portfolio-counter-label">% Kepuasan Klien</div>
+    </div>
+    <div class="portfolio-counter">
+      <div class="portfolio-counter-num" data-target="10">0</div>
+      <div class="portfolio-counter-label">Tahun Pengalaman</div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="portfolio-tabs">
+    <button class="portfolio-tab active" onclick="switchTab('cases')">Studi Kasus</button>
+    <button class="portfolio-tab" onclick="switchTab('logos')">Logo Klien</button>
+    <button class="portfolio-tab" onclick="switchTab('testimoni')">Testimoni</button>
+  </div>
+
+  <!-- Panel: Cases -->
+  <div class="portfolio-panel active" id="panel-cases">
+    <div class="portfolio-grid">
+      <div class="portfolio-case reveal">
+        <div class="portfolio-case-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="portfolio-case-tag">Pendirian PT</div>
+        <div class="portfolio-case-company">PT Maju Bersama Nusantara</div>
+        <div class="portfolio-case-industry">Teknologi &amp; Digital</div>
+        <div class="portfolio-case-services">
+          <span class="portfolio-service-pill">Pendirian PT</span>
+          <span class="portfolio-service-pill">NIB &amp; OSS</span>
+        </div>
+        <div class="portfolio-case-desc">Startup teknologi yang baru berdiri membutuhkan legalitas lengkap. Kami proses pendirian PT dan NIB dalam waktu 7 hari kerja.</div>
+      </div>
+      <div class="portfolio-case reveal reveal-delay-1">
+        <div class="portfolio-case-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="portfolio-case-tag">Perubahan Akta</div>
+        <div class="portfolio-case-company">CV Surya Gemilang</div>
+        <div class="portfolio-case-industry">Perdagangan &amp; Distribusi</div>
+        <div class="portfolio-case-services">
+          <span class="portfolio-service-pill">Perubahan Akta</span>
+          <span class="portfolio-service-pill">Perubahan Direksi</span>
+        </div>
+        <div class="portfolio-case-desc">Perusahaan dagang melakukan restrukturisasi kepemilikan dan pergantian direksi. Seluruh perubahan akta diselesaikan tanpa hambatan.</div>
+      </div>
+      <div class="portfolio-case reveal reveal-delay-2">
+        <div class="portfolio-case-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="portfolio-case-tag">Merek Dagang</div>
+        <div class="portfolio-case-company">Brand Kuliner "Dapur Ibu"</div>
+        <div class="portfolio-case-industry">F&amp;B / Kuliner</div>
+        <div class="portfolio-case-services">
+          <span class="portfolio-service-pill">Pendaftaran Merek</span>
+          <span class="portfolio-service-pill">Perjanjian Waralaba</span>
+        </div>
+        <div class="portfolio-case-desc">Brand kuliner lokal yang ingin ekspansi waralaba. Merek didaftarkan resmi di DJKI dan kontrak waralaba disusun secara legal.</div>
+      </div>
+      <div class="portfolio-case reveal">
+        <div class="portfolio-case-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="portfolio-case-tag">Laporan Tahunan</div>
+        <div class="portfolio-case-company">PT Karya Mandiri Sejahtera</div>
+        <div class="portfolio-case-industry">Konstruksi &amp; Properti</div>
+        <div class="portfolio-case-services">
+          <span class="portfolio-service-pill">Laporan Tahunan AHU</span>
+        </div>
+        <div class="portfolio-case-desc">Perusahaan konstruksi yang terlambat menyampaikan laporan tahunan. Kami bantu proses penyampaian sebelum sanksi administrasi dijatuhkan.</div>
+      </div>
+      <div class="portfolio-case reveal reveal-delay-1">
+        <div class="portfolio-case-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="portfolio-case-tag">PT Perorangan</div>
+        <div class="portfolio-case-company">Toko Batik "Sari Nusantara"</div>
+        <div class="portfolio-case-industry">Fashion &amp; Tekstil</div>
+        <div class="portfolio-case-services">
+          <span class="portfolio-service-pill">PT Perorangan</span>
+          <span class="portfolio-service-pill">NIB OSS RBA</span>
+        </div>
+        <div class="portfolio-case-desc">UMKM fashion batik lokal yang ingin naik kelas ke badan hukum. Pendirian PT Perorangan selesai dalam 5 hari kerja.</div>
+      </div>
+      <div class="portfolio-case reveal reveal-delay-2">
+        <div class="portfolio-case-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="portfolio-case-tag">Kontrak Bisnis</div>
+        <div class="portfolio-case-company">PT Inovasi Digital Raya</div>
+        <div class="portfolio-case-industry">Teknologi &amp; SaaS</div>
+        <div class="portfolio-case-services">
+          <span class="portfolio-service-pill">Perjanjian Kerja Sama</span>
+          <span class="portfolio-service-pill">Perubahan KBLI</span>
+        </div>
+        <div class="portfolio-case-desc">Perusahaan SaaS yang melakukan ekspansi bisnis dengan mitra baru. Penyusunan perjanjian kerja sama dan penyesuaian KBLI diselesaikan profesional.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel: Logos -->
+  <div class="portfolio-panel" id="panel-logos">
+    <div style="margin-bottom: 28px;">
+      <p style="font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.7;">
+        Sebagian klien yang telah mempercayakan kebutuhan legalitas usahanya kepada El Partners.
+      </p>
+    </div>
+    <!-- Ticker row 1 -->
+    <div class="clients-ticker-wrap" style="margin-bottom: 0; border-top: 1px solid rgba(201,168,76,0.08); border-bottom: 1px solid rgba(201,168,76,0.08);">
+      <div class="clients-ticker" id="ticker1">
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Maju Bersama</div><div class="client-logo-type">Teknologi</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Surya Gemilang</div><div class="client-logo-type">Distribusi</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Dapur Ibu</div><div class="client-logo-type">F&B</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Karya Mandiri</div><div class="client-logo-type">Konstruksi</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Sari Nusantara</div><div class="client-logo-type">Fashion</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Inovasi Digital</div><div class="client-logo-type">SaaS</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Bumi Pertiwi</div><div class="client-logo-type">Properti</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Cipta Kreasi</div><div class="client-logo-type">Kreatif</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Andalan Jaya</div><div class="client-logo-type">Manufaktur</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Nusantara Muda</div><div class="client-logo-type">Startup</div></div></div>
+        <!-- duplicate for seamless loop -->
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Maju Bersama</div><div class="client-logo-type">Teknologi</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Surya Gemilang</div><div class="client-logo-type">Distribusi</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Dapur Ibu</div><div class="client-logo-type">F&B</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Karya Mandiri</div><div class="client-logo-type">Konstruksi</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Sari Nusantara</div><div class="client-logo-type">Fashion</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Inovasi Digital</div><div class="client-logo-type">SaaS</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Bumi Pertiwi</div><div class="client-logo-type">Properti</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Cipta Kreasi</div><div class="client-logo-type">Kreatif</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Andalan Jaya</div><div class="client-logo-type">Manufaktur</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Nusantara Muda</div><div class="client-logo-type">Startup</div></div></div>
+      </div>
+    </div>
+    <!-- Ticker row 2 (reverse) -->
+    <div class="clients-ticker-wrap" style="border-bottom: 1px solid rgba(201,168,76,0.08);">
+      <div class="clients-ticker" style="animation-direction: reverse; animation-duration: 22s;">
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Harapan Abadi</div><div class="client-logo-type">Perdagangan</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Prima Sejahtera</div><div class="client-logo-type">Konsultan</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Cahaya Timur</div><div class="client-logo-type">Ekspor-Impor</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Generasi Maju</div><div class="client-logo-type">Edukasi</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Agung Perkasa</div><div class="client-logo-type">Jasa</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Lintang Bestari</div><div class="client-logo-type">Event</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Kharisma Utama</div><div class="client-logo-type">Media</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Sentosa Group</div><div class="client-logo-type">Holding</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Wijaya Kusuma</div><div class="client-logo-type">Agribisnis</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Tirta Amerta</div><div class="client-logo-type">FMCG</div></div></div>
+        <!-- duplicate -->
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Harapan Abadi</div><div class="client-logo-type">Perdagangan</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Prima Sejahtera</div><div class="client-logo-type">Konsultan</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Cahaya Timur</div><div class="client-logo-type">Ekspor-Impor</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Generasi Maju</div><div class="client-logo-type">Edukasi</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Agung Perkasa</div><div class="client-logo-type">Jasa</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Lintang Bestari</div><div class="client-logo-type">Event</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Kharisma Utama</div><div class="client-logo-type">Media</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Sentosa Group</div><div class="client-logo-type">Holding</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Wijaya Kusuma</div><div class="client-logo-type">Agribisnis</div></div></div>
+        <div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">Tirta Amerta</div><div class="client-logo-type">FMCG</div></div></div>
+      </div>
+    </div>
+    <p style="font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted); text-align: center; margin-top: 20px; text-transform: uppercase;">
+      dan ratusan klien lainnya di seluruh Indonesia
+    </p>
+  </div>
+
+  <!-- Panel: Testimoni -->
+  <div class="portfolio-panel" id="panel-testimoni">
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testimonial-text">
+          "El Partners sangat profesional. Pendirian PT kami selesai lebih cepat dari yang dijanjikan. Semua proses transparan dan tim selalu responsif."
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RA</div>
+          <div>
+            <div class="testimonial-name">Rizky Aditya</div>
+            <div class="testimonial-role">CEO — PT Maju Bersama Nusantara</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testimonial-text">
+          "Kami percayakan pendaftaran merek dan kontrak waralaba ke El Partners. Hasilnya memuaskan, proses dipantau secara berkala, sangat recommended!"
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SW</div>
+          <div>
+            <div class="testimonial-name">Siti Wahyuni</div>
+            <div class="testimonial-role">Owner — Dapur Ibu</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testimonial-text">
+          "Laporan tahunan AHU hampir terlewat. El Partners bantu selesaikan dengan cepat dan terhindar dari sanksi administrasi. Terima kasih tim El Partners!"
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">BH</div>
+          <div>
+            <div class="testimonial-name">Budi Hartono</div>
+            <div class="testimonial-role">Direktur — PT Karya Mandiri Sejahtera</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testimonial-text">
+          "Sebagai UMKM yang baru mau naik kelas, saya bingung soal legalitas. El Partners bantu dari awal sampai PT Perorangan saya jadi. Prosesnya mudah!"
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DM</div>
+          <div>
+            <div class="testimonial-name">Dewi Marlina</div>
+            <div class="testimonial-role">Owner — Sari Nusantara</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testimonial-text">
+          "Perubahan akta dan pergantian komisaris perusahaan kami berjalan mulus. Dokumen lengkap, sah, dan sesuai regulasi. El Partners benar-benar terpercaya."
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FP</div>
+          <div>
+            <div class="testimonial-name">Fajar Pratama</div>
+            <div class="testimonial-role">Direktur — CV Surya Gemilang</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testimonial-text">
+          "Perjanjian kerja sama B2B kami disusun sangat rapi dan legal. Tim El Partners sangat memahami kebutuhan bisnis teknologi kami. Akan pakai lagi!"
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AN</div>
+          <div>
+            <div class="testimonial-name">Andi Nugroho</div>
+            <div class="testimonial-role">CTO — PT Inovasi Digital Raya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+  <div class="section-eyebrow reveal">Hubungi Kami</div>
+  <h2 class="section-title reveal reveal-delay-1">Mulai <em>Konsultasi</em> Anda</h2>
+  <p class="section-desc reveal reveal-delay-2">
+    Konsultasi pertama gratis. Tim kami siap membantu Anda menemukan solusi legalitas terbaik.
+  </p>
+
+  <div class="kontak-inner">
+    <div class="kontak-info">
+      <div class="kontak-item reveal">
+        <div class="kontak-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.42 2 2 0 0 1 3.59 2.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="kontak-item-label">WhatsApp / Telepon</div>
+          <div class="kontak-item-value">
+            <a href="https://wa.me/6283870451358">083870451358</a>
+          </div>
+        </div>
+      </div>
+      <div class="kontak-item reveal reveal-delay-1">
+        <div class="kontak-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="kontak-item-label">Email</div>
+          <div class="kontak-item-value">
+            <a href="mailto:info@elpartners.co.id">info@elpartners.co.id</a>
+          </div>
+        </div>
+      </div>
+      <div class="kontak-item reveal reveal-delay-2">
+        <div class="kontak-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div>
+          <div class="kontak-item-label">Website</div>
+          <div class="kontak-item-value">
+            <a href="https://www.elpartners.co.id" target="_blank">www.elpartners.co.id</a>
+          </div>
+        </div>
+      </div>
+      <div class="kontak-item reveal reveal-delay-3">
+        <div class="kontak-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="kontak-item-label">Lokasi</div>
+          <div class="kontak-item-value">Jakarta, Indonesia</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kontak-form reveal reveal-delay-1">
+      <div class="form-title">Kirim Pesan</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" class="form-control" placeholder="Nama Anda">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="telp">WhatsApp</label>
+          <input type="tel" id="telp" class="form-control" placeholder="08xx">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="email@perusahaan.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="layanan">Layanan yang Dibutuhkan</label>
+        <select id="layanan" class="form-control" style="background: rgba(255,255,255,0.04); color: #FAF7F0; cursor: pointer;">
+          <option value="" style="background: #122033;">Pilih Layanan</option>
+          <option value="pendirian_pt" style="background: #122033;">Pendirian PT</option>
+          <option value="pt_perorangan" style="background: #122033;">PT Perorangan</option>
+          <option value="nib_oss" style="background: #122033;">NIB &amp; OSS RBA</option>
+          <option value="perubahan_akta" style="background: #122033;">Perubahan Akta PT</option>
+          <option value="laporan_tahunan" style="background: #122033;">Laporan Tahunan AHU</option>
+          <option value="pendaftaran_merek" style="background: #122033;">Pendaftaran Merek</option>
+          <option value="kontrak" style="background: #122033;">Perjanjian / Kontrak</option>
+          <option value="lainnya" style="background: #122033;">Lainnya</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="pesan">Pesan</label>
+        <textarea id="pesan" class="form-control" placeholder="Ceritakan kebutuhan legalitas usaha Anda..."></textarea>
+      </div>
+      <button class="btn-primary form-submit" onclick="handleSubmit()">Kirim Konsultasi</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">El Partners</div>
+      <div class="footer-brand-sub">Legal &amp; Corporate Service</div>
+      <div class="gold-divider"></div>
+      <p class="footer-brand-desc">
+        Solusi lengkap legalitas usaha untuk UMKM, Startup, dan Perusahaan. 
+        Berpengalaman dan terpercaya menangani berbagai kebutuhan legalitas.
+      </p>
+    </div>
+    <div>
+      <div class="footer-col-title">Layanan</div>
+      <ul class="footer-links">
+        <li><a href="#layanan">Pendirian PT</a></li>
+        <li><a href="#layanan">PT Perorangan</a></li>
+        <li><a href="#layanan">NIB &amp; OSS RBA</a></li>
+        <li><a href="#layanan">Perubahan Akta PT</a></li>
+        <li><a href="#layanan">Laporan Tahunan AHU</a></li>
+        <li><a href="#layanan">Pendaftaran Merek</a></li>
+        <li><a href="#layanan">Kontrak Bisnis</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Kontak</div>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/6283870451358">083870451358</a></li>
+        <li><a href="mailto:info@elpartners.co.id">info@elpartners.co.id</a></li>
+        <li><a href="https://www.elpartners.co.id" target="_blank">www.elpartners.co.id</a></li>
+        <li><a href="#">Jakarta, Indonesia</a></li>
+      </ul>
+      <div style="margin-top: 24px;">
+        <a href="#kontak" class="btn-primary" style="font-size: 10px; padding: 12px 24px;">Konsultasi Gratis</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-tagline">Kami siap menjadi partner legal Anda!</span>
+    <span class="footer-copy">© 2025 El Partners Legal &amp; Corporate Service. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/6283870451358" class="wa-float" target="_blank" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function switchTab(tab) {
+    document.querySelectorAll('.portfolio-tab').forEach((t, i) => {
+      t.classList.toggle('active', ['cases','logos','testimoni'][i] === tab);
+    });
+    document.querySelectorAll('.portfolio-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + tab).classList.add('active');
+  }
+
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current) + (target === 98 ? '%' : (target === 500 || target === 320 ? '+' : '+'));
+      if (current >= target) clearInterval(timer);
+    }, 16);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('[data-target]').forEach(animateCounter);
+        counterObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  const strip = document.querySelector('.portfolio-counter-strip');
+  if (strip) counterObserver.observe(strip);
+
+  function handleSubmit() {
+    const nama = document.getElementById('nama').value.trim();
+    const telp = document.getElementById('telp').value.trim();
+    const layanan = document.getElementById('layanan').value;
+    const pesan = document.getElementById('pesan').value.trim();
+    if (!nama || !telp) { alert('Mohon isi nama dan nomor WhatsApp Anda.'); return; }
+    const text = `Halo El Partners! Saya ${nama} (${telp}) ingin konsultasi mengenai: ${layanan || 'legalitas usaha'}. ${pesan ? 'Pesan: ' + pesan : ''}`;
+    window.open('https://wa.me/6283870451358?text=' + encodeURIComponent(text), '_blank');
+  }
+</script>
+</body>
+</html>

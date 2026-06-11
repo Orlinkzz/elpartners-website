@@ -1,0 +1,455 @@
+{
+  "hero": {
+    "badge": "Konsultasi Awal Gratis",
+    "eyebrow": "Solusi Legalitas Usaha Terpercaya",
+    "title": "Legalitas Usaha & Corporate Services",
+    "desc": "Solusi lengkap legalitas usaha untuk UMKM, Startup, dan Perusahaan. Proses transparan, dokumen resmi & sah, didampingi hingga selesai.",
+    "tags": [
+      "Cepat",
+      "Aman",
+      "Profesional",
+      "Terpercaya"
+    ],
+    "stats": [
+      {
+        "label": "Klien Dilayani",
+        "value": "500+",
+        "target": 500,
+        "suffix": "+"
+      },
+      {
+        "label": "Kepuasan Klien",
+        "value": "98%",
+        "target": 98,
+        "suffix": "%"
+      },
+      {
+        "label": "Tahun Pengalaman",
+        "value": "10+",
+        "target": 10,
+        "suffix": "+"
+      }
+    ],
+    "cta_primary": "Mulai Konsultasi",
+    "cta_secondary": "Lihat Layanan"
+  },
+  "mengapa": {
+    "eyebrow": "Mengapa Memilih Kami",
+    "title": "Partner Legal yang Tepat untuk Bisnis Anda",
+    "desc": "Kami memahami bahwa legalitas adalah fondasi bisnis yang kokoh. Setiap langkah dikerjakan secara profesional dengan standar tertinggi.",
+    "features": [
+      {
+        "number": "I",
+        "title": "Konsultasi Awal Gratis",
+        "desc": "Konsultasi kebutuhan usaha Anda tanpa biaya. Kami analisis dan rekomendasikan solusi terbaik."
+      },
+      {
+        "number": "II",
+        "title": "Proses Transparan",
+        "desc": "Setiap tahap dikerjakan secara jelas dan dapat dipantau. Tidak ada biaya tersembunyi."
+      },
+      {
+        "number": "III",
+        "title": "Pendampingan Sampai Selesai",
+        "desc": "Kami dampingi hingga dokumen selesai dan terbit. Tim berpengalaman siap membantu setiap saat."
+      },
+      {
+        "number": "IV",
+        "title": "Dokumen Lengkap & Sesuai Regulasi",
+        "desc": "Dokumen resmi, sah, dan sesuai dengan ketentuan peraturan perundang-undangan yang berlaku."
+      }
+    ],
+    "quote": {
+      "text": "\"Menangani berbagai kebutuhan legalitas usaha sesuai ketentuan peraturan perundang-undangan yang berlaku — dengan integritas dan profesionalisme penuh.\"",
+      "author": "— El Partners, Jakarta"
+    },
+    "stats": [
+      {
+        "label": "Klien",
+        "value": "500+",
+        "target": 500
+      },
+      {
+        "label": "Legal & Sah",
+        "value": "100%",
+        "target": 100
+      },
+      {
+        "label": "Jenis Layanan",
+        "value": "9",
+        "target": 9
+      },
+      {
+        "label": "Support",
+        "value": "24/7",
+        "target": 100
+      }
+    ]
+  },
+  "layanan": {
+    "eyebrow": "Layanan Kami",
+    "title": "Solusi Lengkap Legalitas Bisnis",
+    "items": [
+      {
+        "number": "01",
+        "title": "Pendirian PT",
+        "desc": "Pendirian Perseroan Terbatas lengkap sesuai ketentuan hukum yang berlaku."
+      },
+      {
+        "number": "02",
+        "title": "PT Perorangan",
+        "desc": "Pendirian PT Perorangan untuk pelaku usaha mikro dan kecil secara simpel."
+      },
+      {
+        "number": "03",
+        "title": "NIB & OSS RBA",
+        "desc": "Pendaftaran Nomor Induk Berusaha melalui sistem OSS RBA dengan cepat."
+      },
+      {
+        "number": "04",
+        "title": "Perubahan Akta PT",
+        "desc": "Perubahan anggaran dasar dan akta perusahaan sesuai kebutuhan bisnis."
+      },
+      {
+        "number": "05",
+        "title": "Perubahan Direksi & Komisaris",
+        "desc": "Pembaruan susunan pengurus perusahaan dengan dokumen lengkap dan legal."
+      },
+      {
+        "number": "06",
+        "title": "Perubahan Maksud & Tujuan (KBLI)",
+        "desc": "Penyesuaian bidang usaha sesuai KBLI terkini untuk mendukung ekspansi bisnis."
+      },
+      {
+        "number": "07",
+        "title": "Laporan Tahunan Perseroan (AHU)",
+        "desc": "Penyampaian laporan tahunan PT ke AHU sesuai Permenkum No. 49 Tahun 2026."
+      },
+      {
+        "number": "08",
+        "title": "Pendaftaran Merek",
+        "desc": "Perlindungan merek dagang Anda melalui pendaftaran resmi di DJKI Kemenkumham."
+      },
+      {
+        "number": "09",
+        "title": "Perjanjian Kerja Sama & Kontrak Bisnis",
+        "desc": "Penyusunan perjanjian dan kontrak bisnis yang kuat dan sesuai regulasi hukum."
+      }
+    ],
+    "spesial": {
+      "tag": "Spesial — Layanan Terbaru",
+      "title": "Laporan Tahunan PT ke AHU/SABH Permenkum No. 49 Tahun 2026",
+      "desc": "Hindari sanksi administrasi — patuhi kewajiban pelaporan tepat waktu. Kami bantu proses penyampaian laporan tahunan dengan cepat dan tepat.",
+      "cta": "Urus Sekarang"
+    }
+  },
+  "keunggulan": {
+    "eyebrow": "Keunggulan Layanan",
+    "title": "Kenapa El Partners?",
+    "items": [
+      {
+        "title": "Legalitas Lengkap",
+        "desc": "Dokumen resmi, sah, dan sesuai peraturan yang berlaku. Dijamin keabsahannya."
+      },
+      {
+        "title": "Hemat Waktu",
+        "desc": "Proses cepat dan efisien, tanpa mengganggu aktivitas bisnis Anda yang berjalan."
+      },
+      {
+        "title": "Kerahasiaan Terjamin",
+        "desc": "Data dan informasi klien kami jaga kerahasiaannya dengan standar keamanan tinggi."
+      },
+      {
+        "title": "Pendampingan Penuh",
+        "desc": "Kami dampingi Anda sampai dokumen selesai dan terbit. Tim profesional siap membantu."
+      }
+    ]
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio & Klien",
+    "title": "Dipercaya oleh Ratusan Bisnis",
+    "desc": "Dari UMKM hingga perusahaan besar — kami telah membantu berbagai klien menyelesaikan kebutuhan legalitas usaha mereka.",
+    "counters": [
+      {
+        "label": "Total Klien Dilayani",
+        "target": 500,
+        "suffix": "+"
+      },
+      {
+        "label": "PT Berhasil Didirikan",
+        "target": 320,
+        "suffix": "+"
+      },
+      {
+        "label": "% Kepuasan Klien",
+        "target": 98,
+        "suffix": "%"
+      },
+      {
+        "label": "Tahun Pengalaman",
+        "target": 10,
+        "suffix": "+"
+      }
+    ],
+    "cases": [
+      {
+        "tag": "Pendirian PT",
+        "company": "PT Maju Bersama Nusantara",
+        "industry": "Teknologi & Digital",
+        "services": [
+          "Pendirian PT",
+          "NIB & OSS"
+        ],
+        "desc": "Startup teknologi yang baru berdiri membutuhkan legalitas lengkap. Kami proses pendirian PT dan NIB dalam waktu 7 hari kerja."
+      },
+      {
+        "tag": "Perubahan Akta",
+        "company": "CV Surya Gemilang",
+        "industry": "Perdagangan & Distribusi",
+        "services": [
+          "Perubahan Akta",
+          "Perubahan Direksi"
+        ],
+        "desc": "Perusahaan dagang melakukan restrukturisasi kepemilikan dan pergantian direksi. Seluruh perubahan akta diselesaikan tanpa hambatan."
+      },
+      {
+        "tag": "Merek Dagang",
+        "company": "Brand Kuliner Dapur Ibu",
+        "industry": "F&B / Kuliner",
+        "services": [
+          "Pendaftaran Merek",
+          "Perjanjian Waralaba"
+        ],
+        "desc": "Brand kuliner lokal yang ingin ekspansi waralaba. Merek didaftarkan resmi di DJKI dan kontrak waralaba disusun secara legal."
+      },
+      {
+        "tag": "Laporan Tahunan",
+        "company": "PT Karya Mandiri Sejahtera",
+        "industry": "Konstruksi & Properti",
+        "services": [
+          "Laporan Tahunan AHU"
+        ],
+        "desc": "Perusahaan konstruksi yang terlambat menyampaikan laporan tahunan. Kami bantu proses penyampaian sebelum sanksi administrasi dijatuhkan."
+      },
+      {
+        "tag": "PT Perorangan",
+        "company": "Toko Batik Sari Nusantara",
+        "industry": "Fashion & Tekstil",
+        "services": [
+          "PT Perorangan",
+          "NIB OSS RBA"
+        ],
+        "desc": "UMKM fashion batik lokal yang ingin naik kelas ke badan hukum. Pendirian PT Perorangan selesai dalam 5 hari kerja."
+      },
+      {
+        "tag": "Kontrak Bisnis",
+        "company": "PT Inovasi Digital Raya",
+        "industry": "Teknologi & SaaS",
+        "services": [
+          "Perjanjian Kerja Sama",
+          "Perubahan KBLI"
+        ],
+        "desc": "Perusahaan SaaS yang melakukan ekspansi bisnis dengan mitra baru. Penyusunan perjanjian kerja sama dan penyesuaian KBLI diselesaikan profesional."
+      }
+    ],
+    "clients_ticker_1": [
+      {
+        "name": "Maju Bersama",
+        "type": "Teknologi",
+        "logo": ""
+      },
+      {
+        "name": "Surya Gemilang",
+        "type": "Distribusi",
+        "logo": ""
+      },
+      {
+        "name": "Dapur Ibu",
+        "type": "F&B",
+        "logo": ""
+      },
+      {
+        "name": "Karya Mandiri",
+        "type": "Konstruksi",
+        "logo": ""
+      },
+      {
+        "name": "Sari Nusantara",
+        "type": "Fashion",
+        "logo": ""
+      },
+      {
+        "name": "Inovasi Digital",
+        "type": "SaaS",
+        "logo": ""
+      },
+      {
+        "name": "Bumi Pertiwi",
+        "type": "Properti",
+        "logo": ""
+      },
+      {
+        "name": "Cipta Kreasi",
+        "type": "Kreatif",
+        "logo": ""
+      },
+      {
+        "name": "Andalan Jaya",
+        "type": "Manufaktur",
+        "logo": ""
+      },
+      {
+        "name": "Nusantara Muda",
+        "type": "Startup",
+        "logo": ""
+      }
+    ],
+    "clients_ticker_2": [
+      {
+        "name": "Harapan Abadi",
+        "type": "Perdagangan",
+        "logo": ""
+      },
+      {
+        "name": "Prima Sejahtera",
+        "type": "Konsultan",
+        "logo": ""
+      },
+      {
+        "name": "Cahaya Timur",
+        "type": "Ekspor-Impor",
+        "logo": ""
+      },
+      {
+        "name": "Generasi Maju",
+        "type": "Edukasi",
+        "logo": ""
+      },
+      {
+        "name": "Agung Perkasa",
+        "type": "Jasa",
+        "logo": ""
+      },
+      {
+        "name": "Lintang Bestari",
+        "type": "Event",
+        "logo": ""
+      },
+      {
+        "name": "Kharisma Utama",
+        "type": "Media",
+        "logo": ""
+      },
+      {
+        "name": "Sentosa Group",
+        "type": "Holding",
+        "logo": ""
+      },
+      {
+        "name": "Wijaya Kusuma",
+        "type": "Agribisnis",
+        "logo": ""
+      },
+      {
+        "name": "Tirta Amerta",
+        "type": "FMCG",
+        "logo": ""
+      }
+    ],
+    "testimonials": [
+      {
+        "stars": 5,
+        "initials": "RA",
+        "name": "Rizky Aditya",
+        "role": "CEO — PT Maju Bersama Nusantara",
+        "text": "\"El Partners sangat profesional. Pendirian PT kami selesai lebih cepat dari yang dijanjikan. Semua proses transparan dan tim selalu responsif.\""
+      },
+      {
+        "stars": 5,
+        "initials": "SW",
+        "name": "Siti Wahyuni",
+        "role": "Owner — Dapur Ibu",
+        "text": "\"Kami percayakan pendaftaran merek dan kontrak waralaba ke El Partners. Hasilnya memuaskan, proses dipantau secara berkala, sangat recommended!\""
+      },
+      {
+        "stars": 5,
+        "initials": "BH",
+        "name": "Budi Hartono",
+        "role": "Direktur — PT Karya Mandiri Sejahtera",
+        "text": "\"Laporan tahunan AHU hampir terlewat. El Partners bantu selesaikan dengan cepat dan terhindar dari sanksi administrasi. Terima kasih tim El Partners!\""
+      },
+      {
+        "stars": 5,
+        "initials": "DM",
+        "name": "Dewi Marlina",
+        "role": "Owner — Sari Nusantara",
+        "text": "\"Sebagai UMKM yang baru mau naik kelas, saya bingung soal legalitas. El Partners bantu dari awal sampai PT Perorangan saya jadi. Prosesnya mudah!\""
+      },
+      {
+        "stars": 5,
+        "initials": "FP",
+        "name": "Fajar Pratama",
+        "role": "Direktur — CV Surya Gemilang",
+        "text": "\"Perubahan akta dan pergantian komisaris perusahaan kami berjalan mulus. Dokumen lengkap, sah, dan sesuai regulasi. El Partners benar-benar terpercaya.\""
+      },
+      {
+        "stars": 5,
+        "initials": "AN",
+        "name": "Andi Nugroho",
+        "role": "CTO — PT Inovasi Digital Raya",
+        "text": "\"Perjanjian kerja sama B2B kami disusun sangat rapi dan legal. Tim El Partners sangat memahami kebutuhan bisnis teknologi kami. Akan pakai lagi!\""
+      }
+    ]
+  },
+  "kontak": {
+    "eyebrow": "Hubungi Kami",
+    "title": "Mulai Konsultasi Anda",
+    "desc": "Konsultasi pertama gratis. Tim kami siap membantu Anda menemukan solusi legalitas terbaik.",
+    "phone": "081-2345-6789",
+    "email": "info@senimankode.com",
+    "website": "legal.senimankode.com",
+    "address": "Jakarta, Indonesia",
+    "form_title": "Kirim Pesan",
+    "services_options": [
+      {
+        "value": "pendirian_pt",
+        "label": "Pendirian PT"
+      },
+      {
+        "value": "pt_perorangan",
+        "label": "PT Perorangan"
+      },
+      {
+        "value": "nib_oss",
+        "label": "NIB & OSS RBA"
+      },
+      {
+        "value": "perubahan_akta",
+        "label": "Perubahan Akta PT"
+      },
+      {
+        "value": "laporan_tahunan",
+        "label": "Laporan Tahunan AHU"
+      },
+      {
+        "value": "pendaftaran_merek",
+        "label": "Pendaftaran Merek"
+      },
+      {
+        "value": "kontrak",
+        "label": "Perjanjian / Kontrak"
+      },
+      {
+        "value": "lainnya",
+        "label": "Lainnya"
+      }
+    ]
+  },
+  "footer": {
+    "brand": "El Partners",
+    "sub": "Legal & Corporate Service",
+    "desc": "Solusi lengkap legalitas usaha untuk UMKM, Startup, dan Perusahaan. Berpengalaman dan terpercaya menangani berbagai kebutuhan legalitas.",
+    "tagline": "Kami siap menjadi partner legal Anda!",
+    "copyright": "© 2026 El Partners Legal & Corporate Service. All rights reserved."
+  }
+}

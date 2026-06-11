@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — El Partners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <nav class="admin-nav">
+    <div class="admin-nav-brand">El Partners — Admin</div>
+    <div class="admin-nav-links">
+      <button class="nav-tab active" data-tab="content">Konten Website</button>
+      <button class="nav-tab" data-tab="messages">Pesan Masuk</button>
+      <button class="nav-tab" data-tab="profile">Profil</button>
+      <button id="logoutBtn" class="btn-logout">Keluar</button>
+    </div>
+  </nav>
+
+  <main class="admin-main">
+    <!-- Tab: Content -->
+    <section id="tab-content" class="admin-tab active">
+      <div class="tab-header">
+        <h2>Kelola Konten Website</h2>
+        <span class="save-status" id="saveStatus"></span>
+      </div>
+      <div class="section-tabs" id="sectionTabs">
+        <button class="section-tab active" data-section="hero">Hero</button>
+        <button class="section-tab" data-section="mengapa">Mengapa Kami</button>
+        <button class="section-tab" data-section="layanan">Layanan</button>
+        <button class="section-tab" data-section="keunggulan">Keunggulan</button>
+        <button class="section-tab" data-section="portfolio">Portfolio</button>
+        <button class="section-tab" data-section="kontak">Kontak</button>
+        <button class="section-tab" data-section="footer">Footer</button>
+      </div>
+      <div id="editorArea" class="editor-area">
+        <p class="text-muted">Pilih section untuk mulai mengedit.</p>
+      </div>
+    </section>
+
+    <!-- Tab: Messages -->
+    <section id="tab-messages" class="admin-tab">
+      <div class="tab-header">
+        <h2>Pesan Masuk</h2>
+        <span id="messageCount" class="badge"></span>
+      </div>
+      <div id="messagesList" class="messages-list">
+        <p class="text-muted">Memuat pesan...</p>
+      </div>
+    </section>
+
+    <!-- Tab: Profile -->
+    <section id="tab-profile" class="admin-tab" style="padding-top:24px;">
+      <div class="tab-header">
+        <h2>Profil Admin</h2>
+      </div>
+      <div class="profile-card">
+        <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+        <p><strong>Nama:</strong> <span id="profileName"></span></p>
+        <p><strong>Role:</strong> <span id="profileRole"></span></p>
+        <hr style="margin:24px 0;border-color:rgba(201,168,76,0.15);">
+        <h3>Ganti Password</h3>
+        <form id="passwordForm" style="max-width:400px;margin-top:16px;">
+          <div class="form-group">
+            <label class="form-label">Password Saat Ini</label>
+            <input type="password" id="currentPassword" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password Baru</label>
+            <input type="password" id="newPassword" class="form-control" required minlength="6">
+          </div>
+          <div id="passwordError" class="form-error" style="display:none"></div>
+          <div id="passwordSuccess" class="form-success" style="display:none"></div>
+          <button type="submit" class="btn-primary">Simpan Password</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="/admin/app.js"></script>
+</body>
+</html>

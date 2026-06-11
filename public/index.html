@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Partners — Legal & Corporate Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1829;
+    --navy-mid: #122033;
+    --navy-light: #1A2F47;
+    --navy-soft: #243D57;
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5E6C0;
+    --cream: #FAF7F0;
+    --cream-warm: #F2EDE0;
+    --white: #FFFFFF;
+    --text-muted: #8FA3B8;
+    --text-light: #B8CAD9;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--navy);
+    color: var(--cream);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 72px;
+    background: rgba(11, 24, 41, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    transition: var(--transition);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none;
+  }
+  .nav-logo-mark {
+    width: 44px; height: 44px;
+    border: 1.5px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 20px; font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 1px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .nav-logo-mark::before {
+    content: '';
+    position: absolute; top: 3px; left: 3px; right: 3px; bottom: 3px;
+    border: 0.5px solid rgba(201, 168, 76, 0.3);
+  }
+  .nav-logo-text { display: flex; flex-direction: column; }
+  .nav-logo-name {
+    font-family: var(--serif);
+    font-size: 18px; font-weight: 600;
+    color: var(--cream);
+    letter-spacing: 2px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .nav-logo-sub {
+    font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-top: 3px;
+  }
+
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; font-size: 11px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-light);
+    transition: color var(--transition);
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transition: transform var(--transition);
+    transform-origin: left;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 8px 22px !important;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--sans);
+    transition: all var(--transition);
+    display: inline-block;
+  }
+  .nav-cta:hover {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+  }
+  .nav-cta::after { display: none !important; }
+
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 5vw 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 40%, rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 80% at 90% 80%, rgba(201, 168, 76, 0.04) 0%, transparent 70%),
+      var(--navy);
+  }
+
+  .hero-grid-lines {
+    position: absolute; inset: 0; z-index: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.8) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.8) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 640px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    padding: 7px 18px;
+    margin-bottom: 36px;
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+  }
+  .hero-badge-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  .hero-eyebrow {
+    font-family: var(--serif);
+    font-size: clamp(13px, 1.2vw, 15px);
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(44px, 6vw, 80px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--cream);
+    margin-bottom: 24px;
+    opacity: 0; animation: fadeUp 0.8s 0.35s forwards;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-title strong { font-weight: 700; display: block; }
+
+  .hero-desc {
+    font-size: 15px; line-height: 1.8; font-weight: 300;
+    color: var(--text-light);
+    max-width: 480px; margin-bottom: 44px;
+    opacity: 0; animation: fadeUp 0.8s 0.5s forwards;
+  }
+
+  .hero-tags {
+    display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 44px;
+    opacity: 0; animation: fadeUp 0.8s 0.65s forwards;
+  }
+  .hero-tag {
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+    color: var(--navy); background: var(--gold);
+    padding: 6px 14px;
+  }
+
+  .hero-actions {
+    display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    border: none; cursor: pointer;
+    font-family: var(--sans);
+    font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    padding: 16px 36px;
+    text-decoration: none; display: inline-block;
+    transition: all var(--transition);
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::before {
+    content: ''; position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: rgba(255,255,255,0.15);
+    transition: left 0.4s ease;
+  }
+  .btn-primary:hover::before { left: 0; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold);
+    background: transparent; cursor: pointer;
+    font-family: var(--sans);
+    font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+    padding: 16px 32px;
+    text-decoration: none; display: inline-block;
+    transition: all var(--transition);
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .hero-card {
+    position: absolute; right: 5vw; top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 28px;
+    opacity: 0; animation: fadeLeft 0.9s 0.9s forwards;
+  }
+  .hero-card-title {
+    font-family: var(--serif); font-size: 11px; font-style: italic;
+    color: var(--gold); letter-spacing: 1px; margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero-stat { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(201,168,76,0.1); }
+  .hero-stat:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .hero-stat-num {
+    font-family: var(--serif); font-size: 36px; font-weight: 600;
+    color: var(--gold-light); line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 4px;
+  }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeLeft { from { opacity: 0; transform: translate(24px, -50%); } to { opacity: 1; transform: translate(0, -50%); } }
+
+  section { padding: 100px 5vw; }
+
+  .section-eyebrow {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 16px;
+  }
+  .section-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 3.5vw, 52px);
+    font-weight: 300; line-height: 1.1;
+    color: var(--cream); margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--gold-light); }
+  .section-desc {
+    font-size: 15px; font-weight: 300; line-height: 1.8;
+    color: var(--text-light); max-width: 520px;
+  }
+
+  #mengapa { background: var(--navy-mid); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  .why-features { list-style: none; margin-top: 40px; }
+  .why-feature {
+    display: flex; gap: 20px; padding: 24px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    cursor: default;
+    transition: padding-left var(--transition);
+  }
+  .why-feature:hover { padding-left: 8px; }
+  .why-feature:first-child { border-top: 1px solid rgba(201,168,76,0.1); }
+  .why-feature-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1px solid rgba(201,168,76,0.25);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-family: var(--serif);
+    font-size: 18px; font-weight: 600;
+    transition: all var(--transition);
+  }
+  .why-feature:hover .why-feature-icon {
+    background: var(--gold); color: var(--navy);
+  }
+  .why-feature-body {}
+  .why-feature-title {
+    font-size: 13px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--cream); margin-bottom: 6px;
+  }
+  .why-feature-desc { font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--text-light); }
+
+  .why-right { position: sticky; top: 100px; }
+  .why-visual {
+    background: var(--navy-light);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-visual::before {
+    content: '"';
+    position: absolute; top: -10px; left: 24px;
+    font-family: var(--serif); font-size: 120px;
+    color: rgba(201,168,76,0.08); line-height: 1;
+    pointer-events: none;
+  }
+  .why-quote {
+    font-family: var(--serif); font-size: 22px; font-style: italic;
+    font-weight: 300; line-height: 1.6; color: var(--cream-warm);
+    margin-bottom: 24px;
+  }
+  .why-quote-author {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+  }
+  .why-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: rgba(201,168,76,0.1);
+    margin-top: 32px;
+  }
+  .why-stat {
+    background: var(--navy-mid);
+    padding: 24px;
+  }
+  .why-stat-num {
+    font-family: var(--serif); font-size: 40px; font-weight: 700;
+    color: var(--gold); line-height: 1;
+  }
+  .why-stat-label {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 6px;
+  }
+
+  #layanan { background: var(--navy); }
+
+  .layanan-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 56px; gap: 24px; flex-wrap: wrap;
+  }
+
+  .layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.1);
+  }
+
+  .layanan-card {
+    background: var(--navy);
+    padding: 36px 32px;
+    position: relative; overflow: hidden;
+    cursor: default;
+    transition: background var(--transition);
+  }
+  .layanan-card::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .layanan-card:hover { background: var(--navy-mid); }
+  .layanan-card:hover::after { transform: scaleX(1); }
+
+  .layanan-card-num {
+    font-family: var(--serif); font-size: 11px; font-style: italic;
+    color: rgba(201,168,76,0.4); letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .layanan-card-icon {
+    width: 48px; height: 48px;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    transition: all var(--transition);
+  }
+  .layanan-card:hover .layanan-card-icon {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+  .layanan-card-icon svg { width: 22px; height: 22px; color: var(--gold); }
+
+  .layanan-card-title {
+    font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--cream);
+    margin-bottom: 10px; line-height: 1.4;
+  }
+  .layanan-card-desc {
+    font-size: 12px; font-weight: 300; line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .spesial-banner {
+    margin: 60px 0 0;
+    background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-soft) 100%);
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 48px 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px; flex-wrap: wrap;
+    position: relative; overflow: hidden;
+  }
+  .spesial-banner::before {
+    content: '';
+    position: absolute; right: -60px; top: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%; border: 40px solid rgba(201,168,76,0.05);
+    pointer-events: none;
+  }
+  .spesial-tag {
+    display: inline-block;
+    font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
+    font-weight: 600; color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.4); padding: 5px 12px;
+    margin-bottom: 14px;
+  }
+  .spesial-title {
+    font-family: var(--serif); font-size: 26px; font-weight: 300;
+    line-height: 1.3; color: var(--cream);
+  }
+  .spesial-title em { font-style: italic; color: var(--gold-light); }
+  .spesial-desc {
+    font-size: 13px; font-weight: 300; line-height: 1.7;
+    color: var(--text-light); margin-top: 10px; max-width: 480px;
+  }
+  .spesial-actions { display: flex; gap: 12px; align-items: center; flex-shrink: 0; }
+
+  #keunggulan { background: var(--navy-mid); }
+  .keunggulan-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: rgba(201,168,76,0.08);
+    margin-top: 56px;
+  }
+  .keunggulan-card {
+    background: var(--navy-mid); padding: 40px 28px;
+    text-align: center;
+    transition: background var(--transition);
+    cursor: default;
+  }
+  .keunggulan-card:hover { background: var(--navy-light); }
+  .keunggulan-icon {
+    width: 60px; height: 60px; margin: 0 auto 20px;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+    transition: all var(--transition);
+  }
+  .keunggulan-card:hover .keunggulan-icon {
+    background: rgba(201,168,76,0.08); border-color: var(--gold);
+  }
+  .keunggulan-icon svg { width: 26px; height: 26px; color: var(--gold); }
+  .keunggulan-title {
+    font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--cream); margin-bottom: 12px;
+  }
+  .keunggulan-desc {
+    font-size: 12px; font-weight: 300; line-height: 1.7; color: var(--text-muted);
+  }
+
+  #kontak { background: var(--navy); }
+  .kontak-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    margin-top: 60px;
+  }
+  .kontak-info { }
+  .kontak-item {
+    display: flex; align-items: flex-start; gap: 18px;
+    margin-bottom: 28px; padding-bottom: 28px;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+  .kontak-item:last-child { border-bottom: none; }
+  .kontak-item-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .kontak-item-icon svg { width: 18px; height: 18px; color: var(--gold); }
+  .kontak-item-label {
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 4px;
+  }
+  .kontak-item-value {
+    font-size: 15px; font-weight: 400; color: var(--cream);
+  }
+  .kontak-item-value a { color: var(--cream); text-decoration: none; }
+  .kontak-item-value a:hover { color: var(--gold); }
+
+  .kontak-form {
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.12);
+    padding: 44px 40px;
+  }
+  .form-title {
+    font-family: var(--serif); font-size: 24px; font-style: italic;
+    color: var(--cream); margin-bottom: 32px;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-label {
+    display: block; font-size: 9px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .form-control {
+    width: 100%; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.12);
+    color: var(--cream);
+    font-family: var(--sans); font-size: 13px; font-weight: 300;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color var(--transition);
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-control:focus { border-color: rgba(201,168,76,0.5); }
+  .form-control::placeholder { color: var(--text-muted); }
+  textarea.form-control { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit { width: 100%; margin-top: 8px; }
+
+  footer {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding: 60px 5vw 32px;
+  }
+  .footer-inner {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+    margin-bottom: 32px;
+  }
+  .footer-brand-name {
+    font-family: var(--serif); font-size: 22px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .footer-brand-sub {
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 18px;
+  }
+  .footer-brand-desc {
+    font-size: 13px; font-weight: 300; line-height: 1.7;
+    color: var(--text-muted); max-width: 300px;
+  }
+  .footer-col-title {
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 20px;
+  }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a {
+    font-size: 13px; font-weight: 300; color: var(--text-muted);
+    text-decoration: none; transition: color var(--transition);
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .footer-tagline {
+    font-family: var(--serif); font-size: 15px; font-style: italic;
+    color: var(--gold-light);
+  }
+  .footer-copy {
+    font-size: 11px; color: var(--text-muted); font-weight: 300; letter-spacing: 0.5px;
+  }
+
+  .gold-divider { width: 60px; height: 1px; background: var(--gold); margin: 20px 0; }
+  .gold-divider.center { margin-left: auto; margin-right: auto; }
+
+  .wa-float {
+    position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    width: 56px; height: 56px;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; text-decoration: none;
+    transition: all var(--transition);
+    box-shadow: 0 4px 24px rgba(201,168,76,0.35);
+  }
+  .wa-float:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(201,168,76,0.4); }
+  .wa-float svg { width: 26px; height: 26px; color: var(--navy); }
+
+  #portfolio { background: var(--navy); }
+
+  .portfolio-tabs {
+    display: flex; gap: 0; margin: 48px 0 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .portfolio-tab {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+    color: var(--text-muted); padding: 12px 24px; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: all var(--transition); background: none; border-top: none; border-left: none; border-right: none;
+    font-family: var(--sans);
+  }
+  .portfolio-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+  .portfolio-tab:hover:not(.active) { color: var(--cream); }
+
+  .portfolio-panel { display: none; }
+  .portfolio-panel.active { display: block; }
+
+  .clients-ticker-wrap {
+    overflow: hidden; position: relative;
+    margin-bottom: 60px;
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+  .clients-ticker {
+    display: flex; gap: 0;
+    animation: ticker 28s linear infinite;
+    width: max-content;
+  }
+  .clients-ticker:hover { animation-play-state: paused; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .client-logo-card {
+    display: flex; align-items: center; justify-content: center;
+    width: 180px; height: 80px; flex-shrink: 0;
+    border-right: 1px solid rgba(201,168,76,0.08);
+    padding: 0 28px;
+    transition: background var(--transition);
+    cursor: default;
+  }
+  .client-logo-card:hover { background: rgba(201,168,76,0.04); }
+  .client-logo-inner { text-align: center; }
+  .client-logo-name {
+    font-family: var(--serif); font-size: 14px; font-weight: 600;
+    letter-spacing: 1px; color: rgba(201,168,76,0.45);
+    transition: color var(--transition);
+    white-space: nowrap;
+  }
+  .client-logo-card:hover .client-logo-name { color: var(--gold); }
+  .client-logo-type {
+    font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(201,168,76,0.2); margin-top: 3px;
+    transition: color var(--transition);
+  }
+  .client-logo-card:hover .client-logo-type { color: rgba(201,168,76,0.5); }
+
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(201,168,76,0.08);
+    margin-bottom: 40px;
+  }
+  .portfolio-case {
+    background: var(--navy); padding: 32px 28px;
+    position: relative; overflow: hidden;
+    cursor: default; transition: background var(--transition);
+  }
+  .portfolio-case:hover { background: var(--navy-mid); }
+  .portfolio-case-tag {
+    display: inline-block;
+    font-size: 8px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+    color: var(--gold); border: 1px solid rgba(201,168,76,0.3);
+    padding: 4px 10px; margin-bottom: 16px;
+  }
+  .portfolio-case-company {
+    font-family: var(--serif); font-size: 20px; font-weight: 600;
+    color: var(--cream); margin-bottom: 6px; line-height: 1.2;
+  }
+  .portfolio-case-industry {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 14px;
+  }
+  .portfolio-case-services {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;
+  }
+  .portfolio-service-pill {
+    font-size: 9px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500;
+    color: var(--navy); background: rgba(201,168,76,0.7);
+    padding: 3px 9px;
+  }
+  .portfolio-case-desc {
+    font-size: 12px; font-weight: 300; line-height: 1.7; color: var(--text-muted);
+  }
+  .portfolio-case-check {
+    position: absolute; top: 20px; right: 20px;
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .portfolio-case-check svg { width: 12px; height: 12px; color: var(--gold); }
+
+  .testimonial-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(201,168,76,0.08);
+  }
+  .testimonial-card {
+    background: var(--navy); padding: 36px 28px;
+    transition: background var(--transition);
+  }
+  .testimonial-card:hover { background: var(--navy-mid); }
+  .testimonial-stars {
+    display: flex; gap: 3px; margin-bottom: 16px;
+  }
+  .testimonial-stars span { color: var(--gold); font-size: 13px; }
+  .testimonial-text {
+    font-family: var(--serif); font-size: 15px; font-style: italic;
+    font-weight: 300; line-height: 1.7; color: var(--cream-warm);
+    margin-bottom: 20px;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .testimonial-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 14px; font-weight: 600;
+    color: var(--gold); flex-shrink: 0;
+    background: rgba(201,168,76,0.06);
+  }
+  .testimonial-name {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px; color: var(--cream);
+  }
+  .testimonial-role {
+    font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 2px;
+  }
+
+  .portfolio-counter-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.12);
+    margin-bottom: 48px;
+  }
+  .portfolio-counter {
+    padding: 32px 28px; text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.08);
+  }
+  .portfolio-counter:last-child { border-right: none; }
+  .portfolio-counter-num {
+    font-family: var(--serif); font-size: 44px; font-weight: 700;
+    color: var(--gold); line-height: 1;
+  }
+  .portfolio-counter-label {
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 8px;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-card { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-right { position: static; }
+    .layanan-grid { grid-template-columns: 1fr 1fr; }
+    .keunggulan-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr 1fr; }
+    .portfolio-counter-strip { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 5vw; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 5vw 60px; }
+    section { padding: 70px 5vw; }
+    .layanan-grid { grid-template-columns: 1fr; }
+    .kontak-inner { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .keunggulan-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+    .spesial-banner { padding: 32px 28px; }
+    .kontak-form { padding: 32px 24px; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .portfolio-counter-strip { grid-template-columns: 1fr 1fr; }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">EL</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">El Partners</span>
+      <span class="nav-logo-sub">Legal &amp; Corporate</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#mengapa">Mengapa Kami</a></li>
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#keunggulan">Keunggulan</a></li>
+    <li><a href="#portfolio">Klien</a></li>
+    <li><a href="#kontak" class="nav-cta">Konsultasi Gratis</a></li>
+  </ul>
+</nav>
+
+<!-- HERO (dynamic) -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content" id="heroContent">
+    <!-- populated by JS -->
+  </div>
+  <div class="hero-card" id="heroCard">
+    <!-- populated by JS -->
+  </div>
+</section>
+
+<!-- MENGAPA KAMI -->
+<section id="mengapa">
+  <div class="why-grid">
+    <div class="why-left" id="mengapaLeft">
+      <!-- populated by JS -->
+    </div>
+    <div class="why-right reveal" id="mengapaRight">
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- LAYANAN -->
+<section id="layanan">
+  <div class="layanan-header" id="layananHeader">
+    <!-- populated by JS -->
+  </div>
+
+  <div class="layanan-grid" id="layananGrid">
+    <!-- populated by JS -->
+  </div>
+
+  <!-- Spesial Banner -->
+  <div class="spesial-banner reveal" id="spesialBanner">
+    <!-- populated by JS -->
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section id="keunggulan">
+  <div style="text-align: center; max-width: 540px; margin: 0 auto;" id="keunggulanHeader">
+    <!-- populated by JS -->
+  </div>
+  <div class="keunggulan-grid" id="keunggulanGrid">
+    <!-- populated by JS -->
+  </div>
+</section>
+
+<!-- PORTFOLIO & KLIEN -->
+<section id="portfolio">
+  <div id="portfolioHeader">
+    <!-- populated by JS -->
+  </div>
+
+  <!-- Counter Strip -->
+  <div class="portfolio-counter-strip reveal" id="counterStrip">
+    <!-- populated by JS -->
+  </div>
+
+  <!-- Tabs -->
+  <div class="portfolio-tabs">
+    <button class="portfolio-tab active" onclick="switchTab('cases')">Studi Kasus</button>
+    <button class="portfolio-tab" onclick="switchTab('logos')">Logo Klien</button>
+    <button class="portfolio-tab" onclick="switchTab('testimoni')">Testimoni</button>
+  </div>
+
+  <!-- Panel: Cases -->
+  <div class="portfolio-panel active" id="panel-cases">
+    <div class="portfolio-grid" id="casesGrid">
+      <!-- populated by JS -->
+    </div>
+  </div>
+
+  <!-- Panel: Logos -->
+  <div class="portfolio-panel" id="panel-logos">
+    <div style="margin-bottom: 28px;">
+      <p style="font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.7;">
+        Sebagian klien yang telah mempercayakan kebutuhan legalitas usahanya kepada El Partners.
+      </p>
+    </div>
+    <div class="clients-ticker-wrap" style="margin-bottom: 0; border-top: 1px solid rgba(201,168,76,0.08); border-bottom: 1px solid rgba(201,168,76,0.08);">
+      <div class="clients-ticker" id="ticker1"></div>
+    </div>
+    <div class="clients-ticker-wrap" style="border-bottom: 1px solid rgba(201,168,76,0.08);">
+      <div class="clients-ticker" style="animation-direction: reverse; animation-duration: 22s;" id="ticker2"></div>
+    </div>
+    <p style="font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted); text-align: center; margin-top: 20px; text-transform: uppercase;">
+      dan ratusan klien lainnya di seluruh Indonesia
+    </p>
+  </div>
+
+  <!-- Panel: Testimoni -->
+  <div class="portfolio-panel" id="panel-testimoni">
+    <div class="testimonial-grid" id="testimonialGrid">
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+  <div id="kontakHeader">
+    <!-- populated by JS -->
+  </div>
+
+  <div class="kontak-inner">
+    <div class="kontak-info" id="kontakInfo">
+      <!-- populated by JS -->
+    </div>
+
+    <div class="kontak-form reveal reveal-delay-1">
+      <div class="form-title">Kirim Pesan</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" class="form-control" placeholder="Nama Anda">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="telp">WhatsApp</label>
+          <input type="tel" id="telp" class="form-control" placeholder="08xx">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="email@perusahaan.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="layanan">Layanan yang Dibutuhkan</label>
+        <select id="layananSelect" class="form-control" style="background: rgba(255,255,255,0.04); color: #FAF7F0; cursor: pointer;">
+          <option value="" style="background: #122033;">Pilih Layanan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="pesan">Pesan</label>
+        <textarea id="pesan" class="form-control" placeholder="Ceritakan kebutuhan legalitas usaha Anda..."></textarea>
+      </div>
+      <button class="btn-primary form-submit" onclick="handleSubmit()">Kirim Konsultasi</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <!-- populated by JS -->
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/6283870451358" class="wa-float" target="_blank" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+// ── Data loading ──
+let contentData = {};
+
+async function loadContent() {
+  try {
+    const res = await fetch('/api/content');
+    contentData = await res.json();
+    renderAll();
+  } catch (err) {
+    console.error('Failed to load content:', err);
+  }
+}
+
+function renderAll() {
+  const d = contentData;
+  if (!d) return;
+
+  // Hero
+  const hero = d.hero;
+  document.getElementById('heroContent').innerHTML = `
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      ${hero.badge}
+    </div>
+    <p class="hero-eyebrow">${hero.eyebrow}</p>
+    <h1 class="hero-title">${hero.title}</h1>
+    <p class="hero-desc">${hero.desc}</p>
+    <div class="hero-tags">
+      ${hero.tags.map(t => `<span class="hero-tag">${t}</span>`).join('')}
+    </div>
+    <div class="hero-actions">
+      <a href="#kontak" class="btn-primary">${hero.cta_primary}</a>
+      <a href="#layanan" class="btn-outline">${hero.cta_secondary}</a>
+    </div>
+  `;
+
+  document.getElementById('heroCard').innerHTML = `
+    <div class="hero-card-title">Rekam Jejak Kami</div>
+    ${hero.stats.map(s => `
+      <div class="hero-stat">
+        <div class="hero-stat-num">${s.value}</div>
+        <div class="hero-stat-label">${s.label}</div>
+      </div>
+    `).join('')}
+  `;
+
+  // Mengapa
+  const mg = d.mengapa;
+  document.getElementById('mengapaLeft').innerHTML = `
+    <div class="section-eyebrow reveal">${mg.eyebrow}</div>
+    <h2 class="section-title reveal reveal-delay-1">${mg.title}</h2>
+    <p class="section-desc reveal reveal-delay-2">${mg.desc}</p>
+    <ul class="why-features">
+      ${mg.features.map((f, i) => `
+        <li class="why-feature reveal reveal-delay-${i + 1}">
+          <div class="why-feature-icon">${f.number}</div>
+          <div class="why-feature-body">
+            <div class="why-feature-title">${f.title}</div>
+            <div class="why-feature-desc">${f.desc}</div>
+          </div>
+        </li>
+      `).join('')}
+    </ul>
+  `;
+
+  document.getElementById('mengapaRight').innerHTML = `
+    <div class="why-visual">
+      <p class="why-quote">${mg.quote.text}</p>
+      <div class="why-quote-author">${mg.quote.author}</div>
+      <div class="why-stats">
+        ${mg.stats.map(s => `
+          <div class="why-stat">
+            <div class="why-stat-num">${s.value}</div>
+            <div class="why-stat-label">${s.label}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  // Layanan
+  const ly = d.layanan;
+  document.getElementById('layananHeader').innerHTML = `
+    <div>
+      <div class="section-eyebrow reveal">${ly.eyebrow}</div>
+      <h2 class="section-title reveal reveal-delay-1">${ly.title}</h2>
+    </div>
+    <a href="#kontak" class="btn-outline reveal reveal-delay-2">Tanya Layanan</a>
+  `;
+
+  document.getElementById('layananGrid').innerHTML = ly.items.map((item, i) => `
+    <div class="layanan-card reveal ${i === 0 ? '' : i === 1 ? 'reveal-delay-1' : i === 2 ? 'reveal-delay-2' : ''}">
+      <div class="layanan-card-num">${item.number}</div>
+      <div class="layanan-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0H5m14 0h2M5 21H3M9 7h1m-1 4h1m4-4h1m-1 4h1M9 15h6"/></svg>
+      </div>
+      <div class="layanan-card-title">${item.title}</div>
+      <div class="layanan-card-desc">${item.desc}</div>
+    </div>
+  `).join('');
+
+  if (ly.spesial) {
+    document.getElementById('spesialBanner').innerHTML = `
+      <div>
+        <span class="spesial-tag">${ly.spesial.tag}</span>
+        <h3 class="spesial-title">${ly.spesial.title}</h3>
+        <p class="spesial-desc">${ly.spesial.desc}</p>
+      </div>
+      <div class="spesial-actions">
+        <a href="#kontak" class="btn-primary">${ly.spesial.cta}</a>
+      </div>
+    `;
+  }
+
+  // Keunggulan
+  const kg = d.keunggulan;
+  document.getElementById('keunggulanHeader').innerHTML = `
+    <div class="section-eyebrow reveal" style="justify-content: center;">${kg.eyebrow}</div>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align: center;">${kg.title}</h2>
+  `;
+
+  document.getElementById('keunggulanGrid').innerHTML = kg.items.map((item, i) => `
+    <div class="keunggulan-card reveal ${i === 1 ? 'reveal-delay-1' : i === 2 ? 'reveal-delay-2' : i === 3 ? 'reveal-delay-3' : ''}">
+      <div class="keunggulan-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <div class="keunggulan-title">${item.title}</div>
+      <div class="keunggulan-desc">${item.desc}</div>
+    </div>
+  `).join('');
+
+  // Portfolio
+  const pf = d.portfolio;
+  document.getElementById('portfolioHeader').innerHTML = `
+    <div class="section-eyebrow reveal">${pf.eyebrow}</div>
+    <h2 class="section-title reveal reveal-delay-1">${pf.title}</h2>
+    <p class="section-desc reveal reveal-delay-2">${pf.desc}</p>
+  `;
+
+  // Counters
+  document.getElementById('counterStrip').innerHTML = pf.counters.map(c => `
+    <div class="portfolio-counter">
+      <div class="portfolio-counter-num" data-target="${c.target}">0</div>
+      <div class="portfolio-counter-label">${c.label}</div>
+    </div>
+  `).join('');
+
+  // Cases
+  document.getElementById('casesGrid').innerHTML = pf.cases.map((c, i) => `
+    <div class="portfolio-case reveal ${i === 1 ? 'reveal-delay-1' : i === 2 ? 'reveal-delay-2' : ''}">
+      <div class="portfolio-case-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="portfolio-case-tag">${c.tag}</div>
+      <div class="portfolio-case-company">${c.company}</div>
+      <div class="portfolio-case-industry">${c.industry}</div>
+      <div class="portfolio-case-services">
+        ${c.services.map(s => `<span class="portfolio-service-pill">${s}</span>`).join('')}
+      </div>
+      <div class="portfolio-case-desc">${c.desc}</div>
+    </div>
+  `).join('');
+
+  // Tickers
+  const tk1 = pf.clients_ticker_1;
+  const tk2 = pf.clients_ticker_2;
+
+  function makeTickerItems(clients) {
+    return clients.map(c => {
+      if (c.logo) {
+        return `<div class="client-logo-card"><div class="client-logo-inner"><img src="${c.logo}" alt="${c.name}" style="max-width:120px;max-height:50px;display:block;margin:0 auto;filter:brightness(0.8) sepia(0.3) hue-rotate(10deg);transition:filter 0.35s;"><div class="client-logo-type">${c.type || ''}</div></div></div>`;
+      }
+      return `<div class="client-logo-card"><div class="client-logo-inner"><div class="client-logo-name">${c.name}</div><div class="client-logo-type">${c.type || ''}</div></div></div>`;
+    }).join('');
+  }
+
+  document.getElementById('ticker1').innerHTML = makeTickerItems(tk1) + makeTickerItems(tk1);
+  document.getElementById('ticker2').innerHTML = makeTickerItems(tk2) + makeTickerItems(tk2);
+
+  // Testimonials
+  document.getElementById('testimonialGrid').innerHTML = pf.testimonials.map((t, i) => `
+    <div class="testimonial-card reveal ${i === 1 ? 'reveal-delay-1' : i === 2 ? 'reveal-delay-2' : ''}">
+      <div class="testimonial-stars">
+        ${'<span>★</span>'.repeat(t.stars)}
+      </div>
+      <div class="testimonial-text">${t.text}</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">${t.initials}</div>
+        <div>
+          <div class="testimonial-name">${t.name}</div>
+          <div class="testimonial-role">${t.role}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // Kontak
+  const kt = d.kontak;
+  document.getElementById('kontakHeader').innerHTML = `
+    <div class="section-eyebrow reveal">${kt.eyebrow}</div>
+    <h2 class="section-title reveal reveal-delay-1">${kt.title}</h2>
+    <p class="section-desc reveal reveal-delay-2">${kt.desc}</p>
+  `;
+
+  document.getElementById('kontakInfo').innerHTML = `
+    <div class="kontak-item reveal">
+      <div class="kontak-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.42 2 2 0 0 1 3.59 2.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div>
+        <div class="kontak-item-label">WhatsApp / Telepon</div>
+        <div class="kontak-item-value"><a href="https://wa.me/${kt.phone}">${kt.phone}</a></div>
+      </div>
+    </div>
+    <div class="kontak-item reveal reveal-delay-1">
+      <div class="kontak-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div>
+        <div class="kontak-item-label">Email</div>
+        <div class="kontak-item-value"><a href="mailto:${kt.email}">${kt.email}</a></div>
+      </div>
+    </div>
+    <div class="kontak-item reveal reveal-delay-2">
+      <div class="kontak-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div>
+        <div class="kontak-item-label">Website</div>
+        <div class="kontak-item-value"><a href="https://${kt.website}" target="_blank">${kt.website}</a></div>
+      </div>
+    </div>
+    <div class="kontak-item reveal reveal-delay-3">
+      <div class="kontak-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <div class="kontak-item-label">Lokasi</div>
+        <div class="kontak-item-value">${kt.address}</div>
+      </div>
+    </div>
+  `;
+
+  // Contact form service options
+  if (kt.services_options) {
+    const select = document.getElementById('layananSelect');
+    select.innerHTML = '<option value="" style="background: #122033;">Pilih Layanan</option>' +
+      kt.services_options.map(o => `<option value="${o.value}" style="background: #122033;">${o.label}</option>`).join('');
+  }
+
+  // Footer
+  const ft = d.footer;
+  document.getElementById('footer').innerHTML = `
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">${ft.brand}</div>
+        <div class="footer-brand-sub">${ft.sub}</div>
+        <div class="gold-divider"></div>
+        <p class="footer-brand-desc">${ft.desc}</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Layanan</div>
+        <ul class="footer-links">
+          <li><a href="#layanan">Pendirian PT</a></li>
+          <li><a href="#layanan">PT Perorangan</a></li>
+          <li><a href="#layanan">NIB &amp; OSS RBA</a></li>
+          <li><a href="#layanan">Perubahan Akta PT</a></li>
+          <li><a href="#layanan">Laporan Tahunan AHU</a></li>
+          <li><a href="#layanan">Pendaftaran Merek</a></li>
+          <li><a href="#layanan">Kontrak Bisnis</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Kontak</div>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/${kt.phone}">${kt.phone}</a></li>
+          <li><a href="mailto:${kt.email}">${kt.email}</a></li>
+          <li><a href="https://${kt.website}" target="_blank">${kt.website}</a></li>
+          <li><a href="#">${kt.address}</a></li>
+        </ul>
+        <div style="margin-top: 24px;">
+          <a href="#kontak" class="btn-primary" style="font-size: 10px; padding: 12px 24px;">Konsultasi Gratis</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-tagline">${ft.tagline}</span>
+      <span class="footer-copy">${ft.copyright}</span>
+    </div>
+  `;
+
+  // Re-run scroll reveal observer
+  reobserveReveal();
+  setupCounters();
+}
+
+// ── Scroll reveal ──
+let revealObserver;
+
+function reobserveReveal() {
+  if (revealObserver) revealObserver.disconnect();
+  revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
+
+// ── Tab switch ──
+function switchTab(tab) {
+  document.querySelectorAll('.portfolio-tab').forEach((t, i) => {
+    t.classList.toggle('active', ['cases','logos','testimoni'][i] === tab);
+  });
+  document.querySelectorAll('.portfolio-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+}
+
+// ── Counters ──
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 1800;
+  const step = target / (duration / 16);
+  let current = 0;
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    const label = el.closest('.portfolio-counter').querySelector('.portfolio-counter-label').textContent.toLowerCase();
+    el.textContent = Math.floor(current) + (label.includes('%') ? '%' : '+');
+    if (current >= target) clearInterval(timer);
+  }, 16);
+}
+
+let counterObserver;
+
+function setupCounters() {
+  if (counterObserver) counterObserver.disconnect();
+  counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('[data-target]').forEach(animateCounter);
+        counterObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  const strip = document.getElementById('counterStrip');
+  if (strip) counterObserver.observe(strip);
+}
+
+// ── Contact form submit ──
+async function handleSubmit() {
+  const nama = document.getElementById('nama').value.trim();
+  const telp = document.getElementById('telp').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const layanan = document.getElementById('layananSelect').value;
+  const pesan = document.getElementById('pesan').value.trim();
+  if (!nama || !telp) { alert('Mohon isi nama dan nomor WhatsApp Anda.'); return; }
+
+  // Save to backend
+  try {
+    await fetch('/api/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: nama, phone: telp, email, service: layanan, message: pesan })
+    });
+  } catch (err) {
+    console.error('Failed to save message:', err);
+  }
+
+  const text = `Halo El Partners! Saya ${nama} (${telp}) ingin konsultasi mengenai: ${layanan || 'legalitas usaha'}. ${pesan ? 'Pesan: ' + pesan : ''}`;
+  window.open('https://wa.me/6283870451358?text=' + encodeURIComponent(text), '_blank');
+}
+
+// ── Init ──
+loadContent();
+
+</script>
+</body>
+</html>
